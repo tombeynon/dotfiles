@@ -24,6 +24,7 @@ Plugin 'altercation/vim-colors-solarized'
 " Airline statusbar
 Plugin 'bling/vim-airline'
 Plugin 'weynhamz/vim-plugin-minibufexpl'
+Plugin 'edkolev/tmuxline.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.    
