@@ -7,12 +7,23 @@ call vundle#begin()
   
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+" NERDTree
 Plugin 'scrooloose/nerdtree.git'
+" Ctrl-P
 Plugin 'kien/ctrlp.vim.git'
+" Unified navigation in tmux and vim
 Plugin 'christoomey/vim-tmux-navigator'
+" Git
 Plugin 'tpope/vim-fugitive'
+" Rails and Bundler
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-bundler.git'
+Plugin 'thoughtbot/vim-rspec'
+" Solarized theme
 Plugin 'altercation/vim-colors-solarized'
+" Airline statusbar
 Plugin 'bling/vim-airline'
+Plugin 'weynhamz/vim-plugin-minibufexpl'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.    
@@ -46,6 +57,12 @@ set laststatus=2
 
 "" Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 "" Solarized theme
 set background=dark
