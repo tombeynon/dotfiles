@@ -55,6 +55,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 "" Airline
 set laststatus=2
+let g:tmuxline_powerline_separators = 0 " disable powerline seperators
 
 "" Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
