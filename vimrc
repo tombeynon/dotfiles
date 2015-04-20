@@ -10,6 +10,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Helpers and bindings
 Plugin 'tpope/vim-unimpaired.git'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-scripts/HTML-AutoCloseTag'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree.git'
