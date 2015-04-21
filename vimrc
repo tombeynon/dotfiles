@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Helpers and bindings
+Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
