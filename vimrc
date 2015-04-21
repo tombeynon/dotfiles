@@ -14,6 +14,7 @@ Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
+Plugin 'scrooloose/nerdcommenter'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree.git'
