@@ -44,7 +44,7 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
 " Buffers and windows
-Plugin 'weynhamz/vim-plugin-minibufexpl'
+"Plugin 'weynhamz/vim-plugin-minibufexpl'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
 
@@ -98,3 +98,4 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <C-e> :NERDTreeToggle<CR>
+map <C-b> :CtrlPBuffer<CR>
