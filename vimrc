@@ -43,9 +43,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
-" Buffers
+" Buffers and windows
 Plugin 'weynhamz/vim-plugin-minibufexpl'
 Plugin 'vim-scripts/bufkill.vim'
+Plugin 'dr-chip-vim-scripts/ZoomWin'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.    
