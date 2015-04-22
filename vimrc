@@ -31,10 +31,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Git
 Plugin 'tpope/vim-fugitive'
 
-" Rails and Bundler
+" Ruby, Rails and Bundler
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-bundler.git'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'vim-ruby/vim-ruby'
 
 " Solarized theme
 Plugin 'altercation/vim-colors-solarized'
@@ -97,5 +98,5 @@ let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
-map <C-e> :NERDTreeToggle<CR>
-map <C-b> :CtrlPBuffer<CR>
+map <silent> <C-e> :NERDTreeToggle<CR>
+map <silent> <C-n> :CtrlPBuffer<CR>
