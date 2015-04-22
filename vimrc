@@ -16,6 +16,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'scrooloose/nerdcommenter'
 
+" CTags
+Plugin 'vim-scripts/AutoTag'
+
 " NERDTree
 Plugin 'scrooloose/nerdtree.git'
 
