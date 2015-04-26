@@ -77,6 +77,14 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+let mapleader=","
+
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<cr>
+
+map <silent> <C-e> :NERDTreeToggle<CR>
+map <silent> <C-n> :CtrlPBuffer<CR>
+
 "" Airline
 set laststatus=2
 let g:tmuxline_powerline_separators = 0 " disable powerline seperators
@@ -94,10 +102,3 @@ map <Leader>a :call RunAllSpecs()<CR>
 set background=dark
 colorscheme solarized
 
-let mapleader=","
-
-nmap <silent> <leader>ev :e $MYVIMRC<cr>
-nmap <silent> <leader>sv :so $MYVIMRC<cr>
-
-map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-n> :CtrlPBuffer<CR>
