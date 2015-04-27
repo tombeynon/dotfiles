@@ -14,6 +14,7 @@ Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch.git'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 
 " CTags
