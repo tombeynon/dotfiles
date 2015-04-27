@@ -32,6 +32,9 @@ Plugin 'scrooloose/nerdtree.git'
 " Ctrl-P
 Plugin 'kien/ctrlp.vim.git'
 
+" SuperTab
+Plugin 'ervandew/supertab'
+
 " Unified navigation in tmux and vim
 Plugin 'christoomey/vim-tmux-navigator'
 
