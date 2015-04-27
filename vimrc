@@ -35,6 +35,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Git
 Plugin 'tpope/vim-fugitive'
 
+" Send to Tmux
+Plugin 'jgdavey/tslime.vim'
+
 " Ruby, Rails and Bundler
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-bundler.git'
@@ -97,10 +100,15 @@ let g:tmuxline_powerline_separators = 0 " disable powerline seperators
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_runner = "os_x_iterm"
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+map <Leader>tv <Plug>SetTmuxVars
+
+map <Leader>rt :call RunCurrentSpecFile()<CR>
+map <Leader>rs :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
+map <Leader>ra :call RunAllSpecs()<CR>
 
 "" Solarized theme
 set background=dark
