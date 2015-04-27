@@ -17,6 +17,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 
+" Search
+Plugin 'rking/ag.vim'
+
 " CTags
 Plugin 'vim-scripts/AutoTag'
 
