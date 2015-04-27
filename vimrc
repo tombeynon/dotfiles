@@ -17,6 +17,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 
+" Dispatch
+Plugin 'tpope/vim-dispatch'
+
 " Search
 Plugin 'rking/ag.vim'
 
@@ -34,9 +37,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Git
 Plugin 'tpope/vim-fugitive'
-
-" Send to Tmux
-Plugin 'jgdavey/tslime.vim'
 
 " Ruby, Rails and Bundler
 Plugin 'tpope/vim-rails.git'
@@ -101,9 +101,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " RSpec.vim mappings
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-
-map <Leader>tv <Plug>SetTmuxVars
+let g:rspec_command = 'Dispatch rspec {spec}'
 
 map <Leader>rt :call RunCurrentSpecFile()<CR>
 map <Leader>rs :call RunNearestSpec()<CR>
