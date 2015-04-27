@@ -13,8 +13,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
-Plugin 'scrooloose/nerdcommenter'
 
 " CTags
 Plugin 'vim-scripts/AutoTag'
