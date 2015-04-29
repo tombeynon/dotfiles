@@ -69,7 +69,7 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set hidden
 set lazyredraw                  " Don't update the display while executing macros
-set showmode                    " At least let yourself know what mode you're in
+set noshowmode                  " Airline shows the mode
 set wildmenu                    " Enable enhanced command-line completion
 set number                      " always show line numbers
 set noswapfile                  " Git handles version controlling
