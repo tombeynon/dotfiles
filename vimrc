@@ -42,10 +42,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 
 " Ruby, Rails and Bundler
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-bundler.git'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-ruby/vim-ruby'
 
 " Solarized theme
 Plugin 'altercation/vim-colors-solarized'
