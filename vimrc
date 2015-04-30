@@ -89,6 +89,9 @@ set smartcase                   " ... unless they contain at least one capital l
 
 let mapleader=","
 
+map § <Esc>
+imap § <Esc>
+
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
