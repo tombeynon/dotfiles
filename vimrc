@@ -55,9 +55,11 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
 " Buffers and windows
-"Plugin 'weynhamz/vim-plugin-minibufexpl'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
+
+" Markdown
+Plugin 'itspriddle/vim-marked'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.    
