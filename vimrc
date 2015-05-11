@@ -100,6 +100,17 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 map <silent> <C-e> :NERDTreeToggle<CR>
 map <silent> <C-n> :CtrlPBuffer<CR>
 
+"" Speed boost
+nnoremap <Leader>w :w<CR>
+
+"" System clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 "" Airline
 set laststatus=2
 let g:tmuxline_powerline_separators = 0 " disable powerline seperators
