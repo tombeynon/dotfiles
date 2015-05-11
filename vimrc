@@ -89,7 +89,7 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-let mapleader=","
+let mapleader="\<Space>"
 
 map § <Esc>
 imap § <Esc>
