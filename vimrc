@@ -15,7 +15,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
+
+" HTML helpers
 Plugin 'vim-scripts/HTML-AutoCloseTag'
+Plugin 'gregsexton/MatchTag'
 
 " Dispatch
 Plugin 'tpope/vim-dispatch'
@@ -114,6 +117,9 @@ vmap <Leader>P "+P
 "" Airline
 set laststatus=2
 let g:tmuxline_powerline_separators = 0 " disable powerline seperators
+
+"" NERDTree
+let NERDTreeQuitOnOpen = 1
 
 "" Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
