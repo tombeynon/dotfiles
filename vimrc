@@ -60,6 +60,7 @@ Plugin 'edkolev/tmuxline.vim'
 " Buffers and windows
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
+Plugin 'schickling/vim-bufonly'
 
 " Markdown
 Plugin 'itspriddle/vim-marked'
