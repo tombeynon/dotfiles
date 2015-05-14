@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
+Plugin 'godlygeek/tabular'
 
 " HTML helpers
 Plugin 'vim-scripts/HTML-AutoCloseTag'
