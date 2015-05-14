@@ -116,6 +116,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+"" Search for visual
+vnoremap // y/<C-R>"<CR>
+
 "" Airline
 set laststatus=2
 let g:tmuxline_powerline_separators = 0 " disable powerline seperators
