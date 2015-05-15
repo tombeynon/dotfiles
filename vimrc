@@ -26,6 +26,7 @@ Plugin 'tpope/vim-dispatch'
 
 " Search
 Plugin 'rking/ag.vim'
+Plugin 'bronson/vim-visual-star-search'
 
 " CTags
 Plugin 'vim-scripts/AutoTag'
@@ -115,9 +116,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-"" Search for visual
-vnoremap // y/<C-R>"<CR>
 
 "" Airline
 set laststatus=2
