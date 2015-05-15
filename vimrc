@@ -8,6 +8,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Dispatch
+Plugin 'tpope/vim-dispatch'
+
 " Helpers and bindings
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired.git'
@@ -20,9 +23,6 @@ Plugin 'godlygeek/tabular'
 " HTML helpers
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'gregsexton/MatchTag'
-
-" Dispatch
-Plugin 'tpope/vim-dispatch'
 
 " Search
 Plugin 'rking/ag.vim'
