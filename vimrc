@@ -20,6 +20,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
 Plugin 'godlygeek/tabular'
 
+Plugin 'terryma/vim-expand-region'
+
 " HTML helpers
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'gregsexton/MatchTag'
@@ -121,6 +123,10 @@ vmap <Leader>P "+P
 " use ag for recursive searching so we don't find 10,000 useless hits inside node_modules
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<CR>
 vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
+
+"" Visual expand region with v
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 "" Airline
 set laststatus=2
