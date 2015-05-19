@@ -16,15 +16,16 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch.git'
-Plugin 'godlygeek/tabular'
-
 Plugin 'terryma/vim-expand-region'
 
-" HTML helpers
+" Code helpers
+Plugin 'tpope/vim-commentary'
+Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'gregsexton/MatchTag'
+Plugin 'tpope/vim-endwise'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " Search
 Plugin 'rking/ag.vim'
