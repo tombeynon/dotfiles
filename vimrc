@@ -22,8 +22,10 @@ Plugin 'terryma/vim-expand-region'
 " Code helpers
 Plugin 'tpope/vim-commentary'
 Plugin 'godlygeek/tabular'
-Plugin 'vim-scripts/HTML-AutoCloseTag'
+Plugin 'Townk/vim-autoclose'
+Plugin 'edsono/vim-matchit'
 Plugin 'gregsexton/MatchTag'
+Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/splitjoin.vim'
 
@@ -128,6 +130,11 @@ vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('gr
 "" Visual expand region with v
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+"" Insert helpers
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
 
 "" Airline
 set laststatus=2
