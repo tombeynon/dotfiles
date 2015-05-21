@@ -22,7 +22,6 @@ Plugin 'terryma/vim-expand-region'
 " Code helpers
 Plugin 'tpope/vim-commentary'
 Plugin 'godlygeek/tabular'
-Plugin 'Townk/vim-autoclose'
 Plugin 'edsono/vim-matchit'
 Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/vim-ragtag'
