@@ -105,6 +105,10 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+"" Escape key delay
+set esckeys                     " no escape key delay
+set timeoutlen=1000 ttimeoutlen=0
+
 let mapleader=","
 
 map § <Esc>

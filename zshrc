@@ -8,6 +8,9 @@ export EDITOR='vim'
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+# 10ms for key sequences
+KEYTIMEOUT=1
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
