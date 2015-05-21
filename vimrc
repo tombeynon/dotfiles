@@ -54,6 +54,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Git
 Plugin 'tpope/vim-fugitive'
 
+" Languages
+Plugin 'pangloss/vim-javascript'
+
 " Ruby, Rails and Bundler
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails.git'
