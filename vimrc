@@ -122,6 +122,8 @@ map <silent> <C-n> :CtrlPBuffer<CR>
 
 "" Speed boost
 nnoremap <Leader>w :w<CR>
+nnoremap <CR> G
+nnoremap <BS> gg
 
 "" System clipboard
 vmap <Leader>y "+y
@@ -130,6 +132,9 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+"" Stupid window
+map q: :q
 
 "" Visual star search
 " use ag for recursive searching so we don't find 10,000 useless hits inside node_modules
@@ -176,6 +181,17 @@ map <Leader>rt :call RunCurrentSpecFile()<CR>
 map <Leader>rs :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
 map <Leader>ra :call RunAllSpecs()<CR>
+
+"" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
 "" Solarized theme
 set background=dark
