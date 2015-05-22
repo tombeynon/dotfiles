@@ -77,10 +77,10 @@ Plugin 'schickling/vim-bufonly'
 " Markdown
 Plugin 'itspriddle/vim-marked'
 
-" The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.    
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 syntax enable
 set encoding=utf-8
