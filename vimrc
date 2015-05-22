@@ -122,8 +122,6 @@ map <silent> <C-n> :CtrlPBuffer<CR>
 
 "" Speed boost
 nnoremap <Leader>w :w<CR>
-nnoremap <CR> G
-nnoremap <BS> gg
 
 "" System clipboard
 vmap <Leader>y "+y
