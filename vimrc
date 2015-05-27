@@ -72,6 +72,7 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
 Plugin 'schickling/vim-bufonly'
+Plugin 'wesQ3/vim-windowswap'
 
 " Markdown
 Plugin 'itspriddle/vim-marked'
