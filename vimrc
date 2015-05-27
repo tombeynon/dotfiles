@@ -102,6 +102,10 @@ set colorcolumn=100             " highlight end of line
 set scrolloff=8                 " keep 8 lines around cursor 
 set sidescroll=1
 set sidescrolloff=15
+
+"" Undo
+set undofile                    " maintain undo history between sessions
+set undodir=~/.vim/undodir
  
 "" Searching
 set hlsearch                    " highlight matches
