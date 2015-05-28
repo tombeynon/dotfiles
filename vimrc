@@ -55,8 +55,10 @@ Plugin 'tpope/vim-fugitive'
 
 " Languages
 Plugin 'sheerun/vim-polyglot'
+Plugin 'kana/vim-textobj-user'
 
 " Ruby, Rails and Bundler
+Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-bundler.git'
 Plugin 'thoughtbot/vim-rspec'
