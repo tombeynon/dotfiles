@@ -80,6 +80,9 @@ Plugin 'wesQ3/vim-windowswap'
 " Markdown
 Plugin 'itspriddle/vim-marked'
 
+" Time tracking
+Plugin 'wakatime/vim-wakatime'
+
 " Keep Plugin commands between vundle#begin/end.    
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
