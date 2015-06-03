@@ -18,6 +18,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-eunuch.git'
 Plugin 'terryma/vim-expand-region'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line'
 
 " Code helpers
 Plugin 'tpope/vim-commentary'
@@ -55,7 +57,6 @@ Plugin 'tpope/vim-fugitive'
 
 " Languages
 Plugin 'sheerun/vim-polyglot'
-Plugin 'kana/vim-textobj-user'
 
 " Ruby, Rails and Bundler
 Plugin 'nelstrom/vim-textobj-rubyblock'
