@@ -149,7 +149,7 @@ vmap <Leader>P "+P
 map q: :q
 
 "" Visual star search
-" use ag for recursive searching so we don't find 10,000 useless hits inside node_modules
+" Use Ag for search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<CR>
 vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
