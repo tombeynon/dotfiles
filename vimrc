@@ -20,6 +20,7 @@ Plugin 'tpope/vim-eunuch.git'
 Plugin 'terryma/vim-expand-region'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line'
+Plugin 'Lokaltog/vim-easymotion'
 
 " Code helpers
 Plugin 'tpope/vim-commentary'
