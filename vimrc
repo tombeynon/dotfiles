@@ -98,6 +98,7 @@ set noshowmode                  " Airline shows the mode
 set wildmenu                    " Enable enhanced command-line completion
 set number                      " always show line numbers
 set noswapfile                  " Git handles version controlling
+set autoread                    " Auto-reload changed files
 
 "" Whitespace
 set nowrap                      " don't wrap lines
