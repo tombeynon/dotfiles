@@ -58,6 +58,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Languages
 Plugin 'sheerun/vim-polyglot'
+Plugin 'sjl/strftimedammit.vim'
 
 " Ruby, Rails and Bundler
 Plugin 'nelstrom/vim-textobj-rubyblock'
