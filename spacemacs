@@ -145,21 +145,37 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
+  ;;
   ;; Ruby
   (setq-default ruby-version-manager 'rbenv)
   (setq-default ruby-enable-ruby-on-rails-support t)
-  ;; Tab settings 
-  (setq-default tab-width 2 indent-tabs-mode nil)
-  (setq-default c-basic-offset 2 c-default-style "bsd")
-  ;; Whitespace settings
-  (setq whitespace-action '(auto-cleanup))
-  (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
   )
 
 (defun dotspacemacs/config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (progn
+    ; Disable Alt-[0-9], since my keyboard kinda needs Alt-3 for the hash key.
+    (define-key window-numbering-keymap "\M-0" nil)
+    (define-key window-numbering-keymap "\M-1" nil)
+    (define-key window-numbering-keymap "\M-2" nil)
+    (define-key window-numbering-keymap "\M-3" nil)
+    (define-key window-numbering-keymap "\M-4" nil)
+    (define-key window-numbering-keymap "\M-5" nil)
+    (define-key window-numbering-keymap "\M-6" nil)
+    (define-key window-numbering-keymap "\M-7" nil)
+    (define-key window-numbering-keymap "\M-8" nil)
+    (define-key window-numbering-keymap "\M-9" nil)
+    ; Actually allow typing #
+    (global-set-key (kbd "M-3") `(lambda () (interactive) (insert "#")))
+    ;;
+    ;; Tab settings
+    (setq tab-width 2)
+    (setq c-basic-offset 2)
+    (setq indent-tabs-mode nil)
+    (setq js-indent-level 2)
+  )
 )
 
 (defun dotspacemacs/init ()
