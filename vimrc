@@ -79,6 +79,9 @@ Plugin 'dr-chip-vim-scripts/ZoomWin'
 Plugin 'schickling/vim-bufonly'
 Plugin 'wesQ3/vim-windowswap'
 
+" Dash
+Plugin 'rizzatti/dash.vim'
+
 " Markdown
 Plugin 'itspriddle/vim-marked'
 
@@ -187,6 +190,9 @@ else
     \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
     \ }
 endif
+
+" Dash
+:nmap <silent> <leader>d <Plug>DashSearch
 
 " RSpec.vim mappings
 let g:rspec_runner = "os_x_iterm"
