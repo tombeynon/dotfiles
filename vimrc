@@ -21,6 +21,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Code helpers
 Plugin 'tpope/vim-commentary'
@@ -144,7 +145,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-n> :CtrlPBuffer<CR>
+map <silent> <C-b> :CtrlPBuffer<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Speed boost
