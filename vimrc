@@ -31,6 +31,9 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/splitjoin.vim'
 
+" Sessionman
+Plugin 'vim-scripts/sessionman.vim'
+
 " Search
 Plugin 'rking/ag.vim'
 Plugin 'bronson/vim-visual-star-search'
