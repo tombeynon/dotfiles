@@ -50,6 +50,9 @@ Plugin 'scrooloose/nerdtree.git'
 " Ctrl-P
 Plugin 'kien/ctrlp.vim.git'
 
+" Tagbar
+Plugin 'majutsushi/tagbar'
+
 " SuperTab
 Plugin 'ervandew/supertab'
 
@@ -142,6 +145,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
 map <silent> <C-n> :CtrlPBuffer<CR>
+map <silent> <C-t> :TagbarToggle<CR>
 
 "" Speed boost
 nnoremap <Leader>w :w<CR>
@@ -180,6 +184,9 @@ let NERDTreeQuitOnOpen = 1
 
 "" Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"" TagBar
+let g:tagbar_autoclose = 1
 
 " Use Ag
 let g:ctrlp_use_caching = 0
