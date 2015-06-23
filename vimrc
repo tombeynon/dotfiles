@@ -184,6 +184,7 @@ let g:tmuxline_powerline_separators = 0 " disable powerline seperators
 let NERDTreeQuitOnOpen = 1
 
 "" Ctrl-P
+let g:ctrlp_switch_buffer = 'et'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" TagBar
