@@ -160,9 +160,6 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-"" Stupid window
-map q: :q
-
 "" Visual star search
 " Use Ag for search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<CR>
