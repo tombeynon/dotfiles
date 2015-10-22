@@ -93,3 +93,5 @@ export PATH="/Applications/android-sdk/tools:/Applications/android-sdk/platform-
 
 export RBENV_ROOT=/usr/local/var/rbenv
 
+
+source /Users/tombeynon/.iterm2_shell_integration.zsh
