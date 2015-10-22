@@ -49,7 +49,7 @@ Plugin 'vim-scripts/AutoTag'
 Plugin 'scrooloose/nerdtree.git'
 
 " Ctrl-P
-Plugin 'kien/ctrlp.vim.git'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Tagbar
 Plugin 'majutsushi/tagbar'
