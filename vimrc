@@ -118,7 +118,7 @@ set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set cursorline                  " highlight current line
-set colorcolumn=100             " highlight end of line 
+set colorcolumn=80              " highlight end of line 
 set scrolloff=8                 " keep 8 lines around cursor 
 set sidescroll=1
 set sidescrolloff=15
