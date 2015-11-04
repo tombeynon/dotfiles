@@ -81,7 +81,6 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
 " Buffers and windows
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
 Plugin 'schickling/vim-bufonly'
@@ -146,7 +145,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-b> :BuffergatorToggle<CR>
+map <silent> <C-b> :CtrlPBuffer<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Speed boost
