@@ -154,7 +154,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-b> :CtrlPBuffer<CR>
+map <silent> <C-b> :CtrlPMRU<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Speed boost
