@@ -43,7 +43,8 @@ Plugin 'bronson/vim-visual-star-search'
 Plugin 'vim-scripts/gitignore'
 
 " CTags
-Plugin 'vim-scripts/AutoTag'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree.git'
