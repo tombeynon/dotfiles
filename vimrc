@@ -194,6 +194,11 @@ let NERDTreeQuitOnOpen = 1
 let g:ctrlp_switch_buffer = 'et'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+"" EasyTags
+set cpoptions+=d
+set tags=./tags
+let g:easytags_dynamic_files = 2
+
 "" TagBar
 let g:tagbar_autoclose = 1
 
