@@ -198,6 +198,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cpoptions+=d
 set tags=./tags
 let g:easytags_dynamic_files = 2
+let g:easytags_async = 1
+let g:easytags_auto_highlight = 0
 
 "" TagBar
 let g:tagbar_autoclose = 1
