@@ -158,8 +158,9 @@ map <silent> <C-e> :NERDTreeToggle<CR>
 map <silent> <C-b> :CtrlPMRU<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
-"" Speed boost
+"" Helpers
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>e :NERDTreeFind<CR>
 
 "" System clipboard
 vmap <Leader>y "+y
