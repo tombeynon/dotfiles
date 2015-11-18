@@ -133,6 +133,7 @@ set sidescrolloff=15
 set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals
+set sessionoptions-=blank
  
 "" Searching
 set hlsearch                    " highlight matches
@@ -184,12 +185,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-" let g:syntastic_ruby_rubocop_exec = expand('~/.rbenv/shims/rubocop')
-" let g:syntastic_ruby_rubocop_args = '-D'
-" let g:syntastic_sass_sass_exec = expand('~/.rbenv/shims/sass')
-" let g:syntastic_sass_sass_args = '-I .'
-" let g:syntastic_scss_sass_exec = expand('~/.rbenv/shims/sass')
-" let g:syntastic_scss_sass_args = '-I .'
 
 "" Visual star search
 " Use Ag for search
