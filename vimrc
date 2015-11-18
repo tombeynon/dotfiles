@@ -81,11 +81,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
-" Buffers and windows
+" Buffers, windows and tabs
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'dr-chip-vim-scripts/ZoomWin'
 Plugin 'schickling/vim-bufonly'
 Plugin 'wesQ3/vim-windowswap'
+Plugin 'gcmt/taboo.vim'
 
 " Dash
 Plugin 'rizzatti/dash.vim'
@@ -127,9 +128,10 @@ set scrolloff=8                 " keep 8 lines around cursor
 set sidescroll=1
 set sidescrolloff=15
 
-"" Undo
+"" Sessions
 set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
+set sessionoptions+=tabpages,globals
  
 "" Searching
 set hlsearch                    " highlight matches
@@ -189,6 +191,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = 'powerline'
+let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree
 let NERDTreeQuitOnOpen = 1
