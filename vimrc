@@ -186,7 +186,9 @@ let g:ragtag_global_maps = 1
 
 "" Airline
 set laststatus=2
-let g:tmuxline_powerline_separators = 0 " disable powerline seperators
+let g:airline_powerline_fonts = 1
+let g:tmuxline_powerline_separators = 1
+let g:tmuxline_preset = 'powerline'
 
 "" NERDTree
 let NERDTreeQuitOnOpen = 1
