@@ -55,8 +55,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Tagbar
 Plugin 'majutsushi/tagbar'
 
-" SuperTab
-Plugin 'ervandew/supertab'
+" Completion
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 
 " Unified navigation in tmux and vim
 Plugin 'christoomey/vim-tmux-navigator'
@@ -171,6 +172,24 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+"" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+" let g:syntastic_ruby_rubocop_exec = expand('~/.rbenv/shims/rubocop')
+" let g:syntastic_ruby_rubocop_args = '-D'
+" let g:syntastic_sass_sass_exec = expand('~/.rbenv/shims/sass')
+" let g:syntastic_sass_sass_args = '-I .'
+" let g:syntastic_scss_sass_exec = expand('~/.rbenv/shims/sass')
+" let g:syntastic_scss_sass_args = '-I .'
 
 "" Visual star search
 " Use Ag for search
