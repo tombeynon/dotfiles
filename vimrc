@@ -98,6 +98,9 @@ Plugin 'itspriddle/vim-marked'
 " Time tracking
 Plugin 'wakatime/vim-wakatime'
 
+" VimWiki
+Plugin 'vimwiki/vimwiki'
+
 " Keep Plugin commands between vundle#begin/end.    
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -236,6 +239,15 @@ else
     \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
     \ }
 endif
+
+" Window swap
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
+
+" VimWiki
+let g:vimwiki_list = [{'path': '~/Dropbox/Documents/vimwiki'}]
 
 " Dash
 :nmap <silent> <leader>d <Plug>DashSearch
