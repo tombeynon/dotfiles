@@ -175,6 +175,11 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+
+"" YCM
+let g:ycm_min_num_identifier_candidate_chars = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+
 "" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
