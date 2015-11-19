@@ -224,7 +224,6 @@ let g:airline#extensions#tabline#enabled = 1
 let NERDTreeQuitOnOpen = 1
 
 "" Ctrl-P
-let g:ctrlp_switch_buffer = 'et'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" EasyTags
