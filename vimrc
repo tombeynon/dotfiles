@@ -226,7 +226,7 @@ let NERDTreeQuitOnOpen = 1
 "" Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-"" EasyTags
+"" Tags
 set cpoptions+=d
 set tags=./tags
 let g:easytags_dynamic_files = 2
@@ -235,6 +235,8 @@ let g:easytags_auto_highlight = 0
 
 "" TagBar
 let g:tagbar_autoclose = 1
+let g:tagbar_map_nexttag = ']t'
+let g:tagbar_map_prevtag = '[t'
 
 " Use Ag
 let g:ctrlp_use_caching = 0
@@ -254,9 +256,6 @@ let g:windowswap_map_keys = 0 "prevent default bindings
 nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
 nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
-
-" VimWiki
-let g:vimwiki_list = [{'path': '~/Dropbox/Documents/vimwiki'}]
 
 " Dash
 :nmap <silent> <leader>d <Plug>DashSearch
