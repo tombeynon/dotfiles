@@ -136,7 +136,7 @@ set sidescrolloff=15
 "" Sessions
 set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
-set sessionoptions+=tabpages,globals
+set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
  
 "" Searching
