@@ -269,6 +269,13 @@ map <Leader>rs :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
 map <Leader>ra :call RunAllSpecs()<CR>
 
+"" highlight current window
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul colorcolumn=80
+    autocmd WinLeave * set nocul colorcolumn=0
+augroup END
+
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg
