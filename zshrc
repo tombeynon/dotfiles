@@ -86,7 +86,6 @@ export TERM=screen-256color
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias mux=tmuxinator
-alias git=hub
 
 export DISABLE_AUTO_TITLE=true
 
