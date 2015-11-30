@@ -91,7 +91,9 @@ export DISABLE_AUTO_TITLE=true
 
 export PATH="/Applications/android-sdk/tools:/Applications/android-sdk/platform-tools:$PATH"
 
-export RBENV_ROOT=/usr/local/var/rbenv
-
+envfile="$HOME/.zshrc-osx.sh"
+if [ -r $envfile ]; then
+    . $envfile
+fi
 
 source ~/.iterm2_shell_integration.zsh
