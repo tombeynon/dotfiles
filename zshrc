@@ -96,4 +96,6 @@ if [ -r $envfile ]; then
     . $envfile
 fi
 
+eval "$(rbenv init -)"
+
 source ~/.iterm2_shell_integration.zsh
