@@ -79,7 +79,8 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'altercation/vim-colors-solarized'
 
 " Airline statusbar
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 
 " Buffers, windows and tabs
