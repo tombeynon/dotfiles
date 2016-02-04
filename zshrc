@@ -8,7 +8,7 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle brew
+# antigen bundle brew
 antigen bundle bundler
 antigen bundle osx
 antigen bundle tmux
