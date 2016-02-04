@@ -1,4 +1,5 @@
 export EDITOR='nvim'
+export DEFAULT_USER='tombeynon'
 
 source ~/.antigen/antigen.zsh
 
@@ -16,7 +17,7 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+antigen theme norm
 
 # Tell antigen that you're done.
 antigen apply
