@@ -102,6 +102,9 @@ Plugin 'itspriddle/vim-marked'
 " Time tracking
 Plugin 'wakatime/vim-wakatime'
 
+" Icons
+Plugin 'ryanoasis/vim-devicons'
+
 
 " Keep Plugin commands between vundle#begin/end.    
 " All of your Plugins must be added before the following line
