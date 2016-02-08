@@ -148,7 +148,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 "" Escape key delay
 set esckeys                     " no escape key delay
-set timeoutlen=1000 ttimeoutlen=0
+set ttimeout ttimeoutlen=0
 "NeoVim handles ESC keys as alt+key, set this to solve the problem
 if has('nvim')
    set ttimeout
