@@ -1,115 +1,108 @@
 set nocompatible                " choose no compatibility with legacy vi
-filetype off                  " required
  
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-  
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))                                                                                    
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim                                                             
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif 
+
+call plug#begin()
 
 " Dispatch
-Plugin 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 
 " Helpers and bindings
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-unimpaired.git'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-eunuch.git'
-Plugin 'terryma/vim-expand-region'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-line'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'terryma/vim-expand-region'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 
 " Code helpers
-Plugin 'tpope/vim-commentary'
-Plugin 'godlygeek/tabular'
-Plugin 'edsono/vim-matchit'
-Plugin 'gregsexton/MatchTag'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-endwise'
-Plugin 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
+Plug 'edsono/vim-matchit'
+Plug 'gregsexton/MatchTag'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-endwise'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Sessionman
-Plugin 'vim-scripts/sessionman.vim'
+Plug 'vim-scripts/sessionman.vim'
 
 " Search
-Plugin 'rking/ag.vim'
-Plugin 'bronson/vim-visual-star-search'
+Plug 'rking/ag.vim'
+Plug 'bronson/vim-visual-star-search'
 
 " Gitignore
-Plugin 'vim-scripts/gitignore'
+Plug 'vim-scripts/gitignore'
 
 " CTags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " NERDTree
-Plugin 'scrooloose/nerdtree.git'
+Plug 'scrooloose/nerdtree'
 
 " Ctrl-P
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Tagbar
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Completion
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'scrooloose/syntastic'
 
 " Unified navigation in tmux and vim
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Languages
-Plugin 'sheerun/vim-polyglot'
-Plugin 'sjl/strftimedammit.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'sjl/strftimedammit.vim'
 
 " Ruby, Rails and Bundler
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'tpope/vim-rails.git'
-Plugin 'tpope/vim-bundler.git'
-Plugin 'thoughtbot/vim-rspec'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'thoughtbot/vim-rspec'
 
 " Solarized theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Airline statusbar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Buffers, windows and tabs
-Plugin 'vim-scripts/bufkill.vim'
-Plugin 'dr-chip-vim-scripts/ZoomWin'
-Plugin 'schickling/vim-bufonly'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'gcmt/taboo.vim'
-
+Plug 'vim-scripts/bufkill.vim'
+Plug 'dr-chip-vim-scripts/ZoomWin'
+Plug 'schickling/vim-bufonly'
+Plug 'wesQ3/vim-windowswap'
+Plug 'gcmt/taboo.vim'
 
 " Dash
-Plugin 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim'
 
 " Markdown
-Plugin 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked'
 
 " Time tracking
-Plugin 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 
 " Icons
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
-
-" Keep Plugin commands between vundle#begin/end.    
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
-syntax enable
+call plug#end()
 
 if !has('nvim')
   set encoding=utf-8
