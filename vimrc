@@ -90,8 +90,6 @@ Plugin 'schickling/vim-bufonly'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'gcmt/taboo.vim'
 
-" Registers
-Plugin 'vim-scripts/YankRing.vim'
 
 " Dash
 Plugin 'rizzatti/dash.vim'
@@ -169,7 +167,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 map <silent> <C-e> :NERDTreeToggle<CR>
 map <silent> <C-b> :CtrlPMRU<CR>
 map <silent> <C-t> :TagbarToggle<CR>
-map <silent> <C-y> :YRShow<CR>
 
 "" Helpers
 nnoremap <Leader>w :w<CR>
@@ -198,10 +195,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['mri']
-
-"" YankRink
-let g:yankring_replace_n_pkey = '[y'
-let g:yankring_replace_n_nkey = ']y'
 
 "" Visual star search
 " Use Ag for search
