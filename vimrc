@@ -120,8 +120,8 @@ set autoread                    " Auto-reload changed files
 
 "" Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
+set tabstop=2 shiftwidth=2      " a tab is two spaces 
+set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set cursorline                  " highlight current line
 set colorcolumn=80              " highlight end of line 
@@ -173,7 +173,6 @@ vmap <Leader>P "+P
 let g:startify_session_dir = '~/.vim/sessions'
 let g:startify_relative_path = 1
 
-
 "" YCM
 let g:ycm_min_num_identifier_candidate_chars = 1
 let g:ycm_min_num_of_chars_for_completion = 3
@@ -209,13 +208,9 @@ set laststatus=2
 let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = 'powerline'
-let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree
 let NERDTreeQuitOnOpen = 1
-
-"" Ctrl-P
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" Tags
 set cpoptions+=d
