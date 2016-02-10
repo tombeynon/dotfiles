@@ -32,8 +32,9 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-endwise'
 Plug 'AndrewRadev/splitjoin.vim'
 
-" Sessionman
-Plug 'vim-scripts/sessionman.vim'
+" IDE
+Plug 'mhinz/vim-startify'
+Plug 'xolox/vim-session'
 
 " Search
 Plug 'rking/ag.vim'
@@ -167,6 +168,11 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+"" Startify
+let g:startify_session_dir = '~/.vim/sessions'
+let g:startify_relative_path = 1
+
 
 "" YCM
 let g:ycm_min_num_identifier_candidate_chars = 1
