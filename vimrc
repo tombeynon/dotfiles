@@ -224,7 +224,10 @@ let g:tagbar_autoclose = 1
 let g:tagbar_map_nexttag = ']t'
 let g:tagbar_map_prevtag = '[t'
 
-" Use Ag
+"" Ctrl P
+let g:ctrlp_switch_buffer = 'et'
+
+"" Use Ag
 let g:ctrlp_use_caching = 0
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
