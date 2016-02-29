@@ -103,6 +103,6 @@ if [ -r $envfile ]; then
     . $envfile
 fi
 
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
 
 source ~/.iterm2_shell_integration.zsh
