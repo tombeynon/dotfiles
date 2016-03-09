@@ -134,6 +134,7 @@ set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
+let g:session_autoload = 'no'
  
 "" Searching
 set hlsearch                    " highlight matches
