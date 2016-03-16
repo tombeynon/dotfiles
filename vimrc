@@ -76,7 +76,6 @@ Plug 'sjl/strftimedammit.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
-Plug 'thoughtbot/vim-rspec'
 
 " Solarized theme
 Plug 'altercation/vim-colors-solarized'
