@@ -58,7 +58,7 @@ Plug 'majutsushi/tagbar'
 
 " Completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 
 " Unified navigation in tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
@@ -178,17 +178,9 @@ let g:startify_relative_path = 1
 let g:ycm_min_num_identifier_candidate_chars = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 
-"" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_ruby_checkers = ['mri']
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
 
 "" Visual star search
 " Use Ag for search
