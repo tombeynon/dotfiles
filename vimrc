@@ -49,8 +49,9 @@ Plug 'xolox/vim-easytags'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 
-" Ctrl-P
-Plug 'ctrlpvim/ctrlp.vim'
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Tagbar
 Plug 'majutsushi/tagbar'
@@ -156,7 +157,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-b> :CtrlPMRU<CR>
+map <silent> <C-p> :Files<CR>
+map <silent> <C-b> :Buffers<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Helpers
@@ -218,22 +220,6 @@ let g:easytags_auto_highlight = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_map_nexttag = ']t'
 let g:tagbar_map_prevtag = '[t'
-
-"" Ctrl P
-let g:ctrlp_switch_buffer = 'et'
-
-"" Use Ag
-let g:ctrlp_use_caching = 0
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-        \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-        \ }
-endif
 
 " Window swap
 let g:windowswap_map_keys = 0 "prevent default bindings
