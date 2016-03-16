@@ -262,6 +262,18 @@ map <Leader>rt :call neoterm#test#run('current')<CR>
 map <Leader>rs :call neoterm#test#run('file')<CR>
 map <Leader>ra :call neoterm#test#run('all')<CR>
 
+set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
+set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
+set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+
+function! AirlineInit()
+  let neotermstatus  = "%#NeotermTestRunning#%{neoterm#test#status('running')}%*"
+  let neotermstatus .= "%#NeotermTestSuccess#%{neoterm#test#status('success')}%*"
+  let neotermstatus .= "%#NeotermTestFailed#%{neoterm#test#status('failed')}%*"
+  let g:airline_section_gutter = airline#section#create(['%=', neotermstatus])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
 "" highlight current window
 augroup BgHighlight
   autocmd!
