@@ -1,5 +1,5 @@
 set nocompatible                " choose no compatibility with legacy vi
- 
+
 " Install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))                                                                                    
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim                                                             
@@ -33,7 +33,6 @@ Plug 'tpope/vim-endwise'
 Plug 'AndrewRadev/splitjoin.vim'
 
 " IDE
-Plug 'mhinz/vim-startify'
 Plug 'xolox/vim-session'
 
 " Search
@@ -169,10 +168,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-"" Startify
-let g:startify_session_dir = '~/.vim/sessions'
-let g:startify_relative_path = 1
 
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
