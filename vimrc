@@ -57,7 +57,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 
 " Unified navigation in tmux and vim
@@ -174,11 +174,16 @@ vmap <Leader>P "+P
 let g:startify_session_dir = '~/.vim/sessions'
 let g:startify_relative_path = 1
 
-"" YCM
-let g:ycm_min_num_identifier_candidate_chars = 1
-let g:ycm_min_num_of_chars_for_completion = 3
+"" Deoplete
+let g:deoplete#enable_at_startup = 1
 
-" Neomake
+inoremap <silent><expr> <Tab>
+		\ pumvisible() ? "\<C-n>" :
+		\ deoplete#mappings#manual_complete()
+
+inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"" Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
 
