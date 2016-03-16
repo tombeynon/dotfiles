@@ -257,6 +257,9 @@ nnoremap <silent> ,th :call neoterm#close()<cr>
 
 tnoremap <Esc> <C-\><C-n> " exit terminal mode with esc
 
+" Gitup
+command Gitup :T gitup
+
 " Tests
 map <Leader>rt :call neoterm#test#run('current')<CR>
 map <Leader>rs :call neoterm#test#run('file')<CR>
