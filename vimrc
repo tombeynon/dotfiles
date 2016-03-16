@@ -134,7 +134,7 @@ set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
 let g:session_autoload = 'no'
- 
+
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -173,8 +173,8 @@ vmap <Leader>P "+P
 let g:deoplete#enable_at_startup = 1
 
 inoremap <silent><expr> <Tab>
-		\ pumvisible() ? "\<C-n>" :
-		\ deoplete#mappings#manual_complete()
+      \ pumvisible() ? "\<C-n>" :
+      \ deoplete#mappings#manual_complete()
 
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -223,14 +223,14 @@ let g:ctrlp_switch_buffer = 'et'
 "" Use Ag
 let g:ctrlp_use_caching = 0
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor
 
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
   let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
+        \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+        \ }
 endif
 
 " Window swap
@@ -240,7 +240,7 @@ nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
 nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
 
 " Dash
-:nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>d <Plug>DashSearch
 
 " RSpec.vim mappings
 let g:rspec_runner = "os_x_iterm"
@@ -253,9 +253,9 @@ map <Leader>ra :call RunAllSpecs()<CR>
 
 "" highlight current window
 augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul colorcolumn=80
-    autocmd WinLeave * set nocul colorcolumn=0
+  autocmd!
+  autocmd WinEnter * set cul colorcolumn=80
+  autocmd WinLeave * set nocul colorcolumn=0
 augroup END
 
 "" vp doesn't replace paste buffer
