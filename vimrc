@@ -59,6 +59,9 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 
+" Terminal/Tests
+Plug 'kassio/neoterm'
+
 " Unified navigation in tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -242,14 +245,22 @@ nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
 
-" RSpec.vim mappings
-let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
+" Neoterm
+let g:neoterm_size = 15
+let g:neoterm_run_tests_bg = 1
+let g:neoterm_close_when_tests_succeed = 1
+let g:neoterm_raise_when_tests_fail = 1
 
-map <Leader>rt :call RunCurrentSpecFile()<CR>
-map <Leader>rs :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
+"" Show/hide terminal
+nnoremap <silent> ,to :call neoterm#open()<cr>
+nnoremap <silent> ,th :call neoterm#close()<cr>
+
+tnoremap <Esc> <C-\><C-n> " exit terminal mode with esc
+
+" Tests
+map <Leader>rt :call neoterm#test#run('current')<CR>
+map <Leader>rs :call neoterm#test#run('file')<CR>
+map <Leader>ra :call neoterm#test#run('all')<CR>
 
 "" highlight current window
 augroup BgHighlight
