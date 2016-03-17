@@ -240,8 +240,6 @@ let g:neoterm_raise_when_tests_fail = 1
 nnoremap <silent> ,to :call neoterm#open()<cr>
 nnoremap <silent> ,th :call neoterm#close()<cr>
 
-tnoremap <Esc> <C-\><C-n> " exit terminal mode with esc
-
 " Gitup
 command Gitup :T gitup
 
