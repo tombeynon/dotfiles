@@ -237,8 +237,8 @@ let g:neoterm_close_when_tests_succeed = 1
 let g:neoterm_raise_when_tests_fail = 1
 
 "" Show/hide terminal
-nnoremap <silent> ,to :call neoterm#open()<cr>
-nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> <leader>to :call neoterm#open()<cr>
+nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
 " Gitup
 command Gitup :T gitup
