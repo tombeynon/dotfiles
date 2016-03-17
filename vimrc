@@ -157,7 +157,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-p> :Files<CR>
+map <silent> <C-p> :GitFiles<CR>
 map <silent> <C-b> :History<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
@@ -229,6 +229,10 @@ nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
 
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
+
+" FZF
+" let g:fzf_nvim_statusline = 0
+let g:fzf_layout = { 'down': '~20%' }
 
 " Neoterm
 let g:neoterm_size = 15
