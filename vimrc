@@ -10,6 +10,7 @@ call plug#begin()
 
 " Dispatch
 Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
 
 " Helpers and bindings
 Plug 'tpope/vim-sensible'
