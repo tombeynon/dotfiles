@@ -157,7 +157,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :NERDTreeToggle<CR>
-map <silent> <C-p> :GitFiles<CR>
+map <silent> <C-p> :Files<CR>
 map <silent> <C-b> :History<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
