@@ -72,6 +72,7 @@ Plug 'tpope/vim-fugitive'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
+Plug 'AndrewRadev/vim-eco'
 Plug 'sjl/strftimedammit.vim'
 
 " Ruby, Rails and Bundler
