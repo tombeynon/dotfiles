@@ -253,6 +253,7 @@ command Gitup :T gitup
 map <Leader>rt :call neoterm#test#run('current')<CR>
 map <Leader>rs :call neoterm#test#run('file')<CR>
 map <Leader>ra :call neoterm#test#run('all')<CR>
+map <Leader>rr :call neoterm#test#rerun()<cr>
 
 set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
 set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
