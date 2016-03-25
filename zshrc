@@ -18,6 +18,9 @@ antigen bundle command-not-found
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# fzf
+antigen bundle urbainvaes/fzf-marks
+
 # Load the theme.
 antigen theme norm
 
