@@ -175,6 +175,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" CWD name
+let cwname = fnamemodify(getcwd(), ':p:h:t')
+
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -201,12 +204,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 inoremap <M-o>       <Esc>o
 inoremap <C-j>       <Down>
 let g:ragtag_global_maps = 1
-
-"" Airline
-set laststatus=2
-let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
-let g:tmuxline_powerline_separators = 1
-let g:tmuxline_preset = 'powerline'
 
 "" NERDTree
 let NERDTreeQuitOnOpen = 1
@@ -258,6 +255,13 @@ map <Leader>rr :call neoterm#test#rerun()<cr>
 set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
 set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
 set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+
+"" Airline
+set laststatus=2
+let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
+let g:tmuxline_powerline_separators = 1
+let g:tmuxline_preset = 'powerline'
+let g:airline_section_z = '%{cwname}'
 
 function! AirlineInit()
   let neotermstatus  = "%#NeotermTestRunning#%{neoterm#test#status('running')}%*"
