@@ -23,6 +23,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'wellle/targets.vim'
 
 " Code helpers
 Plug 'tpope/vim-commentary'
