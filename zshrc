@@ -75,6 +75,11 @@ source ~/.iterm2_shell_integration.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --depth=10 -f -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# CTRL-D - cd into the selected directory
+export FZF_ALT_C_COMMAND="command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -type d -maxdepth 5 -print 2> /dev/null | sed 1d | cut -b3-"
+bindkey '^G' fzf-cd-widget
+
+# Solarized colours
 export FZF_DEFAULT_OPTS='
   --color dark,hl:33,hl+:37,bg+:-1,fg+:254
   --color info:254,prompt:37,spinner:108,pointer:166,marker:166
