@@ -76,6 +76,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --depth=10 -f -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export FZF_DEFAULT_OPTS='
-  --color dark,hl:33,hl+:61,bg+:235,fg+:254
-  --color info:254,prompt:37,spinner:108,pointer:235,marker:235
+  --color dark,hl:33,hl+:37,bg+:-1,fg+:254
+  --color info:254,prompt:37,spinner:108,pointer:166,marker:166
 '
