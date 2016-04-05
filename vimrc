@@ -245,7 +245,11 @@ nnoremap <silent> <leader>to :call neoterm#open()<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
 " Gitup
-command Gitup :T gitup
+function OpenGitup()
+  execute ':T gitup'
+  execute 'call neoterm#close()'
+endfunction
+command Gitup :call OpenGitup()
 
 " Tests
 map <Leader>rt :call neoterm#test#run('current')<CR>
