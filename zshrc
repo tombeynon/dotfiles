@@ -84,3 +84,5 @@ export FZF_DEFAULT_OPTS='
   --color dark,hl:33,hl+:37,bg+:-1,fg+:254
   --color info:254,prompt:37,spinner:108,pointer:166,marker:166
 '
+
+source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"

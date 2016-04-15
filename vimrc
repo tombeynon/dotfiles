@@ -81,8 +81,8 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 
-" Solarized theme
-Plug 'altercation/vim-colors-solarized'
+" Theme
+Plug 'morhetz/gruvbox'
 
 " Airline statusbar
 Plug 'vim-airline/vim-airline'
@@ -296,5 +296,7 @@ vmap <silent> <expr> p <sid>Repl()
 
 "" Solarized theme
 set background=dark
-colorscheme solarized
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme gruvbox
+
 
