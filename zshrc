@@ -62,6 +62,8 @@ export DISABLE_AUTO_TITLE=true
 
 export PATH="/Applications/android-sdk/tools:/Applications/android-sdk/platform-tools:$PATH"
 
+themefile="$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+
 envfile="$HOME/.zshrc-osx.sh"
 if [ -r $envfile ]; then
     . $envfile
@@ -85,4 +87,4 @@ export FZF_DEFAULT_OPTS='
 
 source ~/.iterm2_shell_integration.zsh
 
-source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+. "$themefile"
