@@ -299,4 +299,5 @@ vmap <silent> <expr> p <sid>Repl()
 set background=dark
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
 colorscheme hybrid
