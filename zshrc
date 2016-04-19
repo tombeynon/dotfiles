@@ -21,6 +21,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # fzf
 antigen bundle urbainvaes/fzf-marks
 
+# Base16 theme
+antigen bundle kristijanhusak/vim-hybrid-material base16-material/base16-material.dark.sh
+
 # Load the theme.
 antigen theme norm
 
@@ -62,8 +65,6 @@ export DISABLE_AUTO_TITLE=true
 
 export PATH="/Applications/android-sdk/tools:/Applications/android-sdk/platform-tools:$PATH"
 
-themefile="$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
-
 envfile="$HOME/.zshrc-osx.sh"
 if [ -r $envfile ]; then
     . $envfile
@@ -79,12 +80,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -type d -maxdepth 5 -print 2> /dev/null | sed 1d | cut -b3-"
 bindkey '^G' fzf-cd-widget
 
-# Solarized colours
-export FZF_DEFAULT_OPTS='
-  --color dark,hl:33,hl+:37,bg+:-1,fg+:254
-  --color info:254,prompt:37,spinner:108,pointer:166,marker:166
-'
-
 source ~/.iterm2_shell_integration.zsh
 
-. "$themefile"
+[[ -s $THEME_FILE ]] && source $THEME_FILE

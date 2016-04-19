@@ -82,7 +82,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 
 " Theme
-Plug 'morhetz/gruvbox'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Airline statusbar
 Plug 'vim-airline/vim-airline'
@@ -298,4 +298,6 @@ vmap <silent> <expr> p <sid>Repl()
 "" Solarized theme
 set background=dark
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme gruvbox
+let g:hybrid_custom_term_colors = 1
+let g:airline_theme = "hybrid"
+colorscheme hybrid_material
