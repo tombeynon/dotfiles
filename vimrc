@@ -263,6 +263,7 @@ set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 
 "" Airline
 set laststatus=2
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = 'powerline'
