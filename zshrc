@@ -21,9 +21,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # fzf
 antigen bundle urbainvaes/fzf-marks
 
-# Base16 theme
-antigen bundle kristijanhusak/vim-hybrid-material base16-material/base16-material.dark.sh
-
 # Load the theme.
 antigen theme norm
 
@@ -81,5 +78,3 @@ export FZF_ALT_C_COMMAND="command find -L . \( -path '*/\.*' -o -fstype 'dev' -o
 bindkey '^G' fzf-cd-widget
 
 source ~/.iterm2_shell_integration.zsh
-
-[[ -s $THEME_FILE ]] && source $THEME_FILE
