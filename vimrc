@@ -170,7 +170,6 @@ nnoremap <Leader>e :NERDTreeFind<CR>
 
 "" System clipboard
 vmap <Leader>y "+y
-vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
@@ -245,11 +244,11 @@ nnoremap <silent> <leader>to :call neoterm#open()<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
 " Gitup
-function OpenGitup()
+function! OpenGitup()
   execute ':T gitup'
   execute 'call neoterm#close()'
 endfunction
-command Gitup :call OpenGitup()
+command! Gitup :call OpenGitup()
 
 " Tests
 map <Leader>rt :call neoterm#test#run('current')<CR>
