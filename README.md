@@ -23,7 +23,7 @@ Do everything in [Usage](#usage).
 Set your terminal emulator font to a [NERD Font](https://github.com/ryanoasis/nerd-fonts). I like [Source Code Pro](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf).
 
 ```BASH
-chsh -s $(which zsh)
 brew bundle
+chsh -s $(which zsh)
 pip3 install --user neovim
 ```
