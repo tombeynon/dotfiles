@@ -48,6 +48,9 @@ Plug 'vim-scripts/gitignore'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 
+" Registers
+Plug 'junegunn/vim-peekaboo'
+
 " NERDTree
 Plug 'scrooloose/nerdtree'
 
