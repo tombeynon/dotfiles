@@ -230,7 +230,7 @@ nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
 nmap <silent> <leader>d <Plug>DashSearch
 
 " FZF
-" let g:fzf_nvim_statusline = 0
+let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'down': '~20%' }
 
 " Neoterm
