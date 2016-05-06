@@ -184,11 +184,14 @@ let cwname = fnamemodify(getcwd(), ':p:h:t')
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ deoplete#mappings#manual_complete()
+inoremap <silent><expr><Tab> pumvisible() ? "\<c-n>"
+      \ : (<SID>is_whitespace() ? "\<Tab>" : deoplete#mappings#manual_complete())
+inoremap <expr><S-Tab>  pumvisible() ? "\<c-p>" : "\<c-h>"
+function! s:is_whitespace()
+  let l:col = col('.') - 1
+  return !l:col || getline('.')[l:col - 1]  =~? '\s'
+endfunction
 
-inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
 "" Neomake
 autocmd! BufWritePost * Neomake
@@ -295,7 +298,7 @@ function! s:Repl()
   let s:restore_reg = @"
   return "p@=RestoreRegister()\<cr>"
 endfunction
-vmap <silent> <expr> p <sid>Repl()
+vnoremap <silent> <expr> p <sid>Repl()
 
 "" Solarized theme
 set background=dark
