@@ -73,6 +73,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
