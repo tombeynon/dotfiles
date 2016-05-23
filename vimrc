@@ -39,7 +39,7 @@ Plug 'xolox/vim-session'
 
 " Search
 Plug 'rking/ag.vim'
-Plug 'bronson/vim-visual-star-search'
+Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 
 " Gitignore
 Plug 'vim-scripts/gitignore'
@@ -204,11 +204,6 @@ endfunction
 "" Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
-
-"" Visual star search
-" Use Ag for search
-nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<CR>
-vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
 "" Visual expand region with v
 vmap v <Plug>(expand_region_expand)
