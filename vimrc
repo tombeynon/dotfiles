@@ -179,6 +179,14 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+"" Tmux navigation
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+
 " CWD name
 let cwname = fnamemodify(getcwd(), ':p:h:t')
 
@@ -192,7 +200,6 @@ function! s:is_whitespace()
   let l:col = col('.') - 1
   return !l:col || getline('.')[l:col - 1]  =~? '\s'
 endfunction
-
 
 "" Neomake
 autocmd! BufWritePost * Neomake
