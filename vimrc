@@ -39,7 +39,9 @@ Plug 'xolox/vim-session'
 
 " Search
 Plug 'rking/ag.vim'
-Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-pseudocl' 
+      \| Plug 'junegunn/vim-oblique'
+      \| Plug 'junegunn/vim-fnr'
 
 " Gitignore
 Plug 'vim-scripts/gitignore'
@@ -204,6 +206,12 @@ endfunction
 "" Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
+
+"" Find and replace
+nmap <Leader>si <Plug>(FNR)
+nmap <Leader>ss <Plug>(FNR%)
+xmap <Leader>si <Plug>(FNR)
+xmap <Leader>ss <Plug>(FNR%)
 
 "" Visual expand region with v
 vmap v <Plug>(expand_region_expand)
