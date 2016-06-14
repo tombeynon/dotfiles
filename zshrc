@@ -82,3 +82,13 @@ bindkey '^G' fzf-cd-widget
 source ~/.iterm2_shell_integration.zsh
 
 source "$THEME_FILE"
+
+function tn() {
+  if [ -z "$1" ]; then;
+    session_name=$(basename `pwd`)
+  else
+    session_name=$1
+  fi
+  tmux new-session -s $session_name -n 'main'
+}
+
