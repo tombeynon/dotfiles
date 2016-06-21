@@ -57,6 +57,7 @@ export TERM=screen-256color
 alias mux=tmuxinator
 alias vi=nvim
 alias vim=nvim
+alias git=hub
 
 export DISABLE_AUTO_TITLE=true
 
