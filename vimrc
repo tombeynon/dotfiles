@@ -62,6 +62,7 @@ Plug 'benekastah/neomake'
 
 " Terminal/Tests
 Plug 'kassio/neoterm'
+" Plug 'janko-m/vim-test'
 
 " Unified navigation in tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
@@ -256,6 +257,13 @@ map <Leader>rt :call neoterm#test#run('current')<CR>
 map <Leader>rs :call neoterm#test#run('file')<CR>
 map <Leader>ra :call neoterm#test#run('all')<CR>
 map <Leader>rr :call neoterm#test#rerun()<cr>
+
+" let test#strategy = "dispatch"
+" nmap <silent> <leader>rt :TestNearest<CR>
+" nmap <silent> <leader>rs :TestFile<CR>
+" nmap <silent> <leader>ra :TestSuite<CR>
+" nmap <silent> <leader>rs :TestLast<CR>
+" nmap <silent> <leader>rv :TestVisit<CR>
 
 set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
 set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
