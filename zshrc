@@ -48,7 +48,7 @@ KEYTIMEOUT=1
 
 # User configuration
 
-export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/var/rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TERM=screen-256color
 
 # ssh
@@ -70,7 +70,7 @@ if [ -r $envfile ]; then
     . $envfile
 fi
 
-eval "$(rbenv init - --no-rehash)"
+eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --depth=10 -f -g ""'
