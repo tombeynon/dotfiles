@@ -249,6 +249,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 " FZF
 let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_history_dir = '~/.fzf-history'
 
 " Neoterm
 let g:neoterm_size = 15
