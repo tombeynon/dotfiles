@@ -8,10 +8,6 @@ endif
 
 call plug#begin()
 
-" Dispatch
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-
 " Helpers and bindings
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
@@ -49,9 +45,6 @@ Plug 'vim-scripts/gitignore'
 " CTags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-
-" Registers
-Plug 'junegunn/vim-peekaboo'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
@@ -113,6 +106,11 @@ Plug 'wakatime/vim-wakatime'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
+
+" Dispatch
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+
 
 call plug#end()
 
@@ -253,13 +251,6 @@ let g:neoterm_raise_when_tests_fail = 1
 nnoremap <silent> <leader>to :call neoterm#open()<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
-" Gitup
-function! OpenGitup()
-  execute ':T gitup'
-  execute 'call neoterm#close()'
-endfunction
-command! Gitup :call OpenGitup()
-
 " Tests
 map <Leader>rt :call neoterm#test#run('current')<CR>
 map <Leader>rs :call neoterm#test#run('file')<CR>
@@ -269,6 +260,13 @@ map <Leader>rr :call neoterm#test#rerun()<cr>
 set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
 set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
 set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+
+" Gitup
+function! OpenGitup()
+  execute ':T gitup'
+  execute 'call neoterm#close()'
+endfunction
+command! Gitup :call OpenGitup()
 
 "" Airline
 set laststatus=2
