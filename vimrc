@@ -77,9 +77,14 @@ Plug 'AndrewRadev/vim-eco'
 Plug 'sjl/strftimedammit.vim'
 
 " Ruby, Rails and Bundler
+Plug 'vim-ruby/vim-ruby'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
+Plug 'p0deje/vim-ruby-interpolation'
+Plug 'fousa/vim-flog'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'killphi/vim-legend'
 
 " Theme
 Plug 'morhetz/gruvbox'
@@ -228,6 +233,9 @@ let g:easytags_auto_highlight = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_map_nexttag = ']t'
 let g:tagbar_map_prevtag = '[t'
+
+"" Flog
+silent exe "g:flog_enable"
 
 " Window swap
 let g:windowswap_map_keys = 0 "prevent default bindings
