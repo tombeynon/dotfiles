@@ -24,7 +24,7 @@ Plug 'wellle/targets.vim'
 " Code helpers
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
-Plug 'edsono/vim-matchit'
+Plug 'tmhedberg/matchit'
 Plug 'gregsexton/MatchTag'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-endwise'
