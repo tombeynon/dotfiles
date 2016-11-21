@@ -82,7 +82,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'p0deje/vim-ruby-interpolation'
-Plug 'fousa/vim-flog'
+Plug 'vrybas/vim-flog'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'killphi/vim-legend'
 
@@ -236,6 +236,9 @@ let g:tagbar_map_prevtag = '[t'
 
 "" Flog
 silent exe "g:flog_enable"
+
+"" Legend
+let g:legend_miss_sign    = "⊙"
 
 " Window swap
 let g:windowswap_map_keys = 0 "prevent default bindings
