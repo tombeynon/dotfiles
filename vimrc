@@ -255,6 +255,8 @@ let g:neoterm_size = 15
 let g:neoterm_run_tests_bg = 1
 let g:neoterm_close_when_tests_succeed = 1
 let g:neoterm_raise_when_tests_fail = 1
+let g:neoterm_test_status = { 'running': 'running', 'success': 'success', 'failed': 'failed' }
+let g:neoterm_test_status_format = '%s'
 
 "" Show/hide terminal
 nnoremap <silent> <leader>to :call neoterm#open()<cr>
