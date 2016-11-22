@@ -82,7 +82,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'p0deje/vim-ruby-interpolation'
-Plug 'vrybas/vim-flog'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'killphi/vim-legend'
 
@@ -233,9 +232,6 @@ let g:easytags_auto_highlight = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_map_nexttag = ']t'
 let g:tagbar_map_prevtag = '[t'
-
-"" Flog
-silent exe "g:flog_enable"
 
 "" Legend
 let g:legend_miss_sign    = "⊙"
