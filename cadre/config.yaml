@@ -1,0 +1,5 @@
+---
+quickfix:
+  output_path: .vim/errors.err
+simplecov:
+  output_path: .vim/coverage.vim

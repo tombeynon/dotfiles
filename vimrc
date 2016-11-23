@@ -237,8 +237,8 @@ let NERDTreeQuitOnOpen = 1
 
 "" Tags
 set cpoptions+=d
-set tags=./tags
-let g:easytags_dynamic_files = 2
+set tags=./.vim/tags
+let g:easytags_file = './.vim/tags'
 let g:easytags_async = 1
 let g:easytags_auto_highlight = 0
 
@@ -248,6 +248,7 @@ let g:tagbar_map_nexttag = ']t'
 let g:tagbar_map_prevtag = '[t'
 
 "" Legend
+let g:legend_file_path = ".vim/coverage.vim"
 let g:legend_miss_sign    = "⊙"
 
 nmap - <Plug>(choosewin)
@@ -258,7 +259,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 " FZF
 let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'down': '~20%' }
-let g:fzf_history_dir = '~/.fzf-history'
+let g:fzf_history_dir = './.vim/fzf-history'
 
 " Neoterm
 let g:neoterm_size = 15
