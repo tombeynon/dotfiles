@@ -98,8 +98,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-scripts/bufkill.vim'
 Plug 'dr-chip-vim-scripts/ZoomWin'
 Plug 'schickling/vim-bufonly'
-Plug 'wesQ3/vim-windowswap'
 Plug 'gcmt/taboo.vim'
+Plug 't9md/vim-choosewin'
 
 " Dash
 Plug 'rizzatti/dash.vim'
@@ -250,11 +250,7 @@ let g:tagbar_map_prevtag = '[t'
 "" Legend
 let g:legend_miss_sign    = "⊙"
 
-" Window swap
-let g:windowswap_map_keys = 0 "prevent default bindings
-nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
-nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
-nnoremap <silent> <leader>sw :call WindowSwap#EasyWindowSwap()<CR>
+nmap - <Plug>(choosewin)
 
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
