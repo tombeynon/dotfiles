@@ -46,8 +46,9 @@ Plug 'vim-scripts/gitignore'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 
-" NERDTree
-Plug 'scrooloose/nerdtree'
+" File explorer
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
 
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -169,14 +170,27 @@ imap § <Esc>
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
-map <silent> <C-e> :NERDTreeToggle<CR>
+map <silent> <C-e> :VimFilerExplorer -toggle -parent -force-hide<CR>
 map <silent> <C-p> :Files<CR>
 map <silent> <C-b> :History<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Helpers
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>e :NERDTreeFind<CR>
+nnoremap <Leader>e :VimFilerExplorer -find<CR>
+
+"" File explorer
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+	
+call vimfiler#custom#profile('default', 'context', {
+\   'safe' : 0,
+\ })
+autocmd FileType vimfiler nnoremap <silent><buffer><expr> s vimfiler#do_switch_action('split')
+autocmd FileType vimfiler nnoremap <silent><buffer><expr> v vimfiler#do_switch_action('vsplit')
+autocmd FileType vimfiler nmap <silent><buffer> <C-l> <Plug>(vimfiler_switch_to_other_window)
+autocmd FileType vimfiler nmap <silent><buffer> p <Plug>(vimfiler_preview_file)
+autocmd FileType vimfiler nmap <silent><buffer> <Leader>r <Plug>(vimfiler_redraw_screen)
 
 "" System clipboard
 vmap <Leader>y "+y
