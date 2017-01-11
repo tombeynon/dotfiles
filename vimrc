@@ -63,7 +63,7 @@ Plug 'benekastah/neomake'
 
 " Terminal/Tests
 Plug 'kassio/neoterm'
-" Plug 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 
 " Unified navigation in tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
@@ -263,32 +263,18 @@ let g:fzf_history_dir = './.vim/fzf-history'
 
 " Neoterm
 let g:neoterm_size = 15
-let g:neoterm_run_tests_bg = 1
-let g:neoterm_close_when_tests_succeed = 1
-let g:neoterm_raise_when_tests_fail = 1
-let g:neoterm_test_status = { 'running': 'running', 'success': 'success', 'failed': 'failed' }
-let g:neoterm_test_status_format = '%s'
 
 "" Show/hide terminal
 nnoremap <silent> <leader>to :call neoterm#open()<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
 " Tests
-map <Leader>rt :call neoterm#test#run('current')<CR>
-map <Leader>rs :call neoterm#test#run('file')<CR>
-map <Leader>ra :call neoterm#test#run('all')<CR>
-map <Leader>rr :call neoterm#test#rerun()<cr>
-
-" let test#strategy = "dispatch"
-" nmap <silent> <leader>rt :TestNearest<CR>
-" nmap <silent> <leader>rs :TestFile<CR>
-" nmap <silent> <leader>ra :TestSuite<CR>
-" nmap <silent> <leader>rs :TestLast<CR>
-" nmap <silent> <leader>rv :TestVisit<CR>
-
-set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
-set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
-set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+let test#strategy = "neoterm"
+nmap <silent> <leader>rt :TestNearest<CR>
+nmap <silent> <leader>rs :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rv :TestVisit<CR>
 
 " Gitup
 function! OpenGitup()
@@ -304,14 +290,6 @@ let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = 'powerline'
 let g:airline_section_z = '%{cwname}'
-
-function! AirlineInit()
-  let neotermstatus  = "%#NeotermTestRunning#%{neoterm#test#status('running')}%*"
-  let neotermstatus .= "%#NeotermTestSuccess#%{neoterm#test#status('success')}%*"
-  let neotermstatus .= "%#NeotermTestFailed#%{neoterm#test#status('failed')}%*"
-  let g:airline_section_gutter = airline#section#create(['%=', neotermstatus])
-endfunction
-autocmd VimEnter * call AirlineInit()
 
 "" highlight current window
 augroup BgHighlight
