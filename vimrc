@@ -58,8 +58,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'benekastah/neomake'
+Plug 'fishbullet/deoplete-ruby'
 
 " Terminal/Tests
 Plug 'kassio/neoterm'
@@ -204,6 +205,7 @@ let cwname = fnamemodify(getcwd(), ':p:h:t')
 
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 50
 
 inoremap <silent><expr><Tab> pumvisible() ? "\<c-n>"
       \ : (<SID>is_whitespace() ? "\<Tab>" : deoplete#mappings#manual_complete())
