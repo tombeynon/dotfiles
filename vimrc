@@ -34,10 +34,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'xolox/vim-session'
 
 " Search
-Plug 'rking/ag.vim'
-Plug 'junegunn/vim-pseudocl' 
-      \| Plug 'junegunn/vim-oblique'
-      \| Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-slash'
 
 " Gitignore
 Plug 'vim-scripts/gitignore'
