@@ -25,7 +25,7 @@ Plug 'wellle/targets.vim'
 
 " Code helpers
 Plug 'tpope/vim-commentary'
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 Plug 'tmhedberg/matchit'
 Plug 'gregsexton/MatchTag'
 Plug 'tpope/vim-ragtag'
@@ -178,6 +178,8 @@ map <silent> <C-t> :TagbarToggle<CR>
 "" Helpers
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :VimFilerExplorer -find<CR>
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "" File explorer
 let g:vimfiler_as_default_explorer = 1
