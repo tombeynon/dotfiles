@@ -221,6 +221,9 @@ endfunction
 autocmd! BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
 
+"" Neoformat
+let g:neoformat_enabled_eruby = ['html-beutify']
+
 "" Find and replace
 nmap <Leader>si <Plug>(FNR)
 nmap <Leader>ss <Plug>(FNR%)
