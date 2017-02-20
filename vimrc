@@ -31,6 +31,7 @@ Plug 'gregsexton/MatchTag'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-endwise'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'sbdchd/neoformat'
 
 " IDE
 Plug 'xolox/vim-session'
