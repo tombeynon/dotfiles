@@ -185,10 +185,10 @@ nmap ga <Plug>(EasyAlign)
 "" File explorer
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
-	
+
 call vimfiler#custom#profile('default', 'context', {
-\   'safe' : 0,
-\ })
+      \   'safe' : 0,
+      \ })
 autocmd FileType vimfiler nnoremap <silent><buffer><expr> s vimfiler#do_switch_action('split')
 autocmd FileType vimfiler nnoremap <silent><buffer><expr> v vimfiler#do_switch_action('vsplit')
 autocmd FileType vimfiler nmap <silent><buffer> <C-l> <Plug>(vimfiler_switch_to_other_window)
