@@ -93,3 +93,6 @@ function tn() {
   tmux new-session -s $session_name -n 'main'
 }
 
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
