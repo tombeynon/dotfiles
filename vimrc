@@ -48,6 +48,7 @@ Plug 'xolox/vim-easytags'
 
 " File explorer
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/neossh.vim'
 Plug 'Shougo/vimfiler.vim'
 
 " FZF
