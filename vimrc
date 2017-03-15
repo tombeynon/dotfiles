@@ -226,10 +226,7 @@ let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
 let g:neoformat_enabled_eruby = ['html-beutify']
 
 "" Find and replace
-nmap <Leader>si <Plug>(FNR)
-nmap <Leader>ss <Plug>(FNR%)
-xmap <Leader>si <Plug>(FNR)
-xmap <Leader>ss <Plug>(FNR%)
+set inccommand=nosplit " split for split preview
 
 "" Visual expand region with v
 vmap v <Plug>(expand_region_expand)
