@@ -34,6 +34,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sbdchd/neoformat'
 
 " IDE
+Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 " Search
@@ -43,8 +44,7 @@ Plug 'junegunn/vim-slash'
 Plug 'vim-scripts/gitignore'
 
 " CTags
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'szw/vim-tags'
 
 " File explorer
 Plug 'Shougo/unite.vim'
@@ -241,11 +241,8 @@ let g:ragtag_global_maps = 1
 let NERDTreeQuitOnOpen = 1
 
 "" Tags
-set cpoptions+=d
-set tags=./.vim/tags
-let g:easytags_file = './.vim/tags'
-let g:easytags_async = 1
-let g:easytags_auto_highlight = 0
+let g:vim_tags_directories = [".vim"]
+let g:vim_tags_extension = '.tags'
 
 "" TagBar
 let g:tagbar_autoclose = 1
