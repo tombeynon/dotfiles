@@ -307,6 +307,9 @@ augroup BgHighlight
   autocmd WinLeave * set nocul colorcolumn=0
 augroup END
 
+"" reload changed file
+autocmd FocusGained * silent! checktime
+
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg
