@@ -152,8 +152,11 @@ set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
-let g:session_autoload = 'prompt'
-let g:session_default_name = fnamemodify(getcwd(), ':t')
+let g:session_directory = "./.vim/" 
+let g:session_default_name = "session"
+let g:session_autoload = "yes"
+let g:session_autosave = "yes"
+
 
 "" Searching
 set hlsearch                    " highlight matches
