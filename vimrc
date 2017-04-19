@@ -104,7 +104,9 @@ Plug 'schickling/vim-bufonly'
 Plug 'gcmt/taboo.vim'
 Plug 't9md/vim-choosewin'
 
-" Tasks
+" Wiki/Tasks
+Plug 'vimwiki/vimwiki', {'branch': 'dev'}
+Plug 'tbabej/taskwiki'
 Plug 'blindFS/vim-taskwarrior'
 
 " Markdown
