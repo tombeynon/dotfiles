@@ -107,6 +107,9 @@ Plug 'schickling/vim-bufonly'
 Plug 'gcmt/taboo.vim'
 Plug 't9md/vim-choosewin'
 
+" Tasks
+Plug 'blindFS/vim-taskwarrior'
+
 " Dash
 Plug 'rizzatti/dash.vim'
 
@@ -188,6 +191,7 @@ map <silent> <C-t> :TagbarToggle<CR>
 "" Helpers
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :VimFilerExplorer -find<CR>
+nnoremap <Leader>t :TW<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -287,6 +291,9 @@ command! -bang -nargs=? -complete=dir Files
 
 " Neoterm
 let g:neoterm_size = 15
+
+" TaskWarrior
+let g:task_rc_override = 'rc.defaultwidth=0'
 
 "" Show/hide terminal
 nnoremap <silent> <leader>to :call neoterm#open()<cr>
