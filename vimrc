@@ -251,7 +251,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 "" Insert helpers
 inoremap <M-o>       <Esc>o
-inoremap <C-j>       <Down>
 let g:ragtag_global_maps = 1
 
 "" NERDTree
@@ -281,10 +280,10 @@ let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_history_dir = './.vim/fzf-history'
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+      \ call fzf#vim#files(<q-args>,
+      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \                 <bang>0)
 
 " Neoterm
 let g:neoterm_size = 15
