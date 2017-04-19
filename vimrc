@@ -62,6 +62,10 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'benekastah/neomake'
 Plug 'fishbullet/deoplete-ruby'
+" Plug 'SirVer/ultisnips'
+Plug 'tombeynon/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 
 " Terminal/Tests
 Plug 'kassio/neoterm'
@@ -212,15 +216,24 @@ let cwname = fnamemodify(getcwd(), ':p:h:t')
 
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 50
+let g:deoplete#auto_complete_delay = 100
+set completeopt=longest,menuone,preview
+call deoplete#custom#set('_', 'min_pattern_length', 1)
+call deoplete#custom#set('ultisnips', 'rank', 9999)
+call deoplete#custom#set('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
+call deoplete#custom#set('_', 'converters',
+      \ ['converter_auto_delimiter', 'converter_remove_overlap',
+      \ 'converter_auto_paren'])
 
-inoremap <silent><expr><Tab> pumvisible() ? "\<c-n>"
-      \ : (<SID>is_whitespace() ? "\<Tab>" : deoplete#mappings#manual_complete())
-inoremap <expr><S-Tab>  pumvisible() ? "\<c-p>" : "\<c-h>"
-function! s:is_whitespace()
-  let l:col = col('.') - 1
-  return !l:col || getline('.')[l:col - 1]  =~? '\s'
+function! g:Multiple_cursors_before()
+  let g:deoplete#disable_auto_complete = 1
 endfunction
+function! g:Multiple_cursors_after()
+  let g:deoplete#disable_auto_complete = 0
+endfunction
+
+let g:UltiSnipsExpandTrigger="<C-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "" Neomake
 autocmd! BufWritePost * Neomake
