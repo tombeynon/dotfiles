@@ -40,9 +40,6 @@ Plug 'xolox/vim-session'
 " Search
 Plug 'junegunn/vim-slash'
 
-" Gitignore
-Plug 'vim-scripts/gitignore'
-
 " CTags
 Plug 'szw/vim-tags'
 
@@ -109,9 +106,6 @@ Plug 't9md/vim-choosewin'
 
 " Tasks
 Plug 'blindFS/vim-taskwarrior'
-
-" Dash
-Plug 'rizzatti/dash.vim'
 
 " Markdown
 Plug 'itspriddle/vim-marked'
@@ -274,9 +268,6 @@ let g:legend_file_path = ".vim/coverage.vim"
 let g:legend_miss_sign    = "⊙"
 
 nmap - <Plug>(choosewin)
-
-" Dash
-nmap <silent> <leader>d <Plug>DashSearch
 
 " FZF
 let g:fzf_nvim_statusline = 0
