@@ -47,6 +47,7 @@ Plug 'szw/vim-tags'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neossh.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/neomru.vim'
 
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -181,7 +182,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 map <silent> <C-e> :VimFilerExplorer -toggle -parent -force-hide<CR>
 map <silent> <C-p> :Files<CR>
-map <silent> <C-b> :History<CR>
+map <silent> <C-b> :MRUFiles<CR>
 map <silent> <C-t> :TagbarToggle<CR>
 
 "" Helpers
@@ -271,6 +272,10 @@ let g:legend_miss_sign    = "⊙"
 
 nmap - <Plug>(choosewin)
 
+"" NeoMRU
+let g:neomru#file_mru_path = "./.vim/neomru/file"
+let g:neomru#directory_mru_path = "./.vim/neomru/directory"
+
 " FZF
 let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'down': '~20%' }
@@ -281,6 +286,10 @@ command! -bang -nargs=? -complete=dir Files
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
+command! MRUFiles call fzf#run(fzf#wrap({
+      \   'source': 'sed "1d;s|^'.getcwd().'/||" ./.vim/neomru/file',
+      \   'sink': 'e'
+      \ }))
 
 " Neoterm
 let g:neoterm_size = 15
