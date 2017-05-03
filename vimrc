@@ -93,9 +93,8 @@ Plug 'killphi/vim-legend'
 " Theme
 Plug 'morhetz/gruvbox'
 
-" Airline statusbar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Statusbar
+Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim'
 
 " Buffers, windows and tabs
@@ -276,7 +275,6 @@ let g:neomru#file_mru_path = "./.vim/neomru/file"
 let g:neomru#directory_mru_path = "./.vim/neomru/directory"
 
 " FZF
-let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_history_dir = './.vim/fzf-history'
 
@@ -315,13 +313,68 @@ function! OpenGitup()
 endfunction
 command! Gitup :call OpenGitup()
 
-"" Airline
+"" Statusline
 set laststatus=2
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline_powerline_fonts = 1 " https://github.com/powerline/fonts
-let g:tmuxline_powerline_separators = 1
-let g:tmuxline_preset = 'powerline'
-let g:airline_section_z = '%{cwname}'
+let g:tmuxline_theme = 'lightline'
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'LightlineModified',
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive',
+      \   'filename': 'LightlineFilename',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'mode': 'LightlineMode',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? ' '.branch : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 "" highlight current window
 augroup BgHighlight
