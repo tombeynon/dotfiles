@@ -318,6 +318,10 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
       \   'right': [ [ 'ale' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
+      \ 'inactive': {
+      \   'left': [ ['filename'] ],
+      \   'right': [ ['filetype'] ],
+      \ },
       \ 'component_function': {
       \   'modified': 'LightlineModified',
       \   'readonly': 'LightlineReadonly',
