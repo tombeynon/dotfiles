@@ -58,7 +58,7 @@ Plug 'majutsushi/tagbar'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 Plug 'fishbullet/deoplete-ruby'
 " Plug 'SirVer/ultisnips'
 Plug 'tombeynon/ultisnips'
@@ -234,10 +234,6 @@ endfunction
 let g:UltiSnipsExpandTrigger="<C-j>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-"" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_ruby_enabled_makers = ['mri'] " disable rubocop
-
 "" Neoformat
 let g:neoformat_enabled_eruby = ['html-beutify']
 
@@ -319,7 +315,8 @@ let g:tmuxline_theme = 'lightline'
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'ale', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LightlineModified',
@@ -330,6 +327,12 @@ let g:lightline = {
       \   'filetype': 'LightlineFiletype',
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
+      \ },
+      \ 'component_expand': {
+      \   'ale': 'ALEGetStatusLine',
+      \ },
+      \ 'component_type': {
+      \   'ale': 'error',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
@@ -375,6 +378,14 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+"" ALE linting
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+augroup ALELightlineUpdate
+    autocmd!
+    autocmd User ALELint call lightline#update()
+augroup END
 
 "" highlight current window
 augroup BgHighlight
