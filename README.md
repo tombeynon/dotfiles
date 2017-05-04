@@ -27,3 +27,10 @@ brew bundle
 chsh -s $(which zsh)
 pip3 install --user neovim
 ```
+
+## Additional bits
+
+```BASH
+gem install neovim
+pip3 install --upgrade git+git://github.com/tbabej/tasklib@develop
+```
