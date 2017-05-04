@@ -64,6 +64,7 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'tombeynon/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+Plug 'vim-scripts/marvim'
 
 " Terminal/Tests
 Plug 'kassio/neoterm'
