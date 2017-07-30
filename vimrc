@@ -400,7 +400,7 @@ augroup BgHighlight
 augroup END
 
 "" reload changed file
-autocmd FocusGained * silent! checktime
+" autocmd FocusGained * silent! checktime
 
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
