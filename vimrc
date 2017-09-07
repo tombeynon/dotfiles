@@ -413,6 +413,8 @@ function! s:Repl()
 endfunction
 vnoremap <silent> <expr> p <sid>Repl()
 
+set mouse=a
+
 "" Solarized theme
 set background=dark
 " set termguicolors
