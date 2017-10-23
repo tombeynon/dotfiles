@@ -287,6 +287,7 @@ command! MRUFiles call fzf#run(fzf#wrap({
 
 " Neoterm
 let g:neoterm_size = 15
+let g:neoterm_fixedsize = 1
 
 " TaskWarrior
 let g:task_rc_override = 'rc.defaultwidth=0'
@@ -297,11 +298,17 @@ nnoremap <silent> <leader>th :call neoterm#close()<cr>
 
 " Tests
 let test#strategy = "neoterm"
-nmap <silent> <leader>rt :TestNearest<CR>
-nmap <silent> <leader>rs :TestFile<CR>
-nmap <silent> <leader>ra :TestSuite<CR>
-nmap <silent> <leader>rl :TestLast<CR>
-nmap <silent> <leader>rv :TestVisit<CR>
+nmap <silent> <leader>rt :call RunTest('TestNearest')<CR>
+nmap <silent> <leader>rs :call RunTest('TestFile')<CR>
+nmap <silent> <leader>ra :call RunTest('TestSuite')<CR>
+nmap <silent> <leader>rl :call RunTest('TestLast')<CR>
+nmap <silent> <leader>rv :call RunTest('TestVisit')<CR>
+
+function! RunTest(cmd)
+   call neoterm#open() " Opens the neoterm window
+   call neoterm#normal('G') " Scroll to the end of the neoterm window
+   exec a:cmd
+endfunction
 
 " Gitup
 function! OpenGitup()
