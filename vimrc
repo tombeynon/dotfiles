@@ -401,6 +401,7 @@ augroup END
 
 "" reload changed file
 " autocmd FocusGained * silent! checktime
+autocmd WinEnter,BufWinEnter,FocusGained * checktime
 
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
