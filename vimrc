@@ -1,10 +1,10 @@
 set nocompatible                " choose no compatibility with legacy vi
 
 " Install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))                                                                                    
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim                                                             
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif 
+endif
 
 call plug#begin()
 
@@ -32,6 +32,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-endwise'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sbdchd/neoformat'
+Plug 'ntpeters/vim-better-whitespace'
 
 " IDE
 Plug 'xolox/vim-misc'
@@ -142,12 +143,12 @@ set autoread                    " Auto-reload changed files
 
 "" Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces 
+set tabstop=2 shiftwidth=2      " a tab is two spaces
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set cursorline                  " highlight current line
-set colorcolumn=80              " highlight end of line 
-set scrolloff=8                 " keep 8 lines around cursor 
+set colorcolumn=80              " highlight end of line
+set scrolloff=8                 " keep 8 lines around cursor
 set sidescroll=1
 set sidescrolloff=15
 
@@ -156,7 +157,7 @@ set undofile                    " maintain undo history between sessions
 set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
-let g:session_directory = "./.vim/" 
+let g:session_directory = "./.vim/"
 let g:session_default_name = "session"
 let g:session_autoload = "yes"
 let g:session_autosave = "yes"
@@ -190,6 +191,8 @@ nnoremap <Leader>e :VimFilerExplorer -find<CR>
 nnoremap <Leader>t :TW<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+autocmd BufEnter * EnableStripWhitespaceOnSave
 
 "" File explorer
 let g:vimfiler_as_default_explorer = 1
