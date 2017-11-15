@@ -1,6 +1,6 @@
 # dotfiles
 
-This is my dotfiles repo. There are many like it, but this one is mine. 
+This is my dotfiles repo. There are many like it, but this one is mine.
 
 ## Usage
 
@@ -32,5 +32,4 @@ pip3 install --user neovim
 
 ```BASH
 gem install neovim
-pip3 install --upgrade git+git://github.com/tbabej/tasklib@develop
 ```

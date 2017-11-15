@@ -106,11 +106,6 @@ Plug 'schickling/vim-bufonly'
 Plug 'gcmt/taboo.vim'
 Plug 't9md/vim-choosewin'
 
-" Wiki/Tasks
-Plug 'vimwiki/vimwiki', {'branch': 'dev'}
-Plug 'tbabej/taskwiki'
-Plug 'blindFS/vim-taskwarrior'
-
 " Markdown
 Plug 'itspriddle/vim-marked'
 
@@ -291,9 +286,6 @@ command! MRUFiles call fzf#run(fzf#wrap({
 " Neoterm
 let g:neoterm_size = 15
 let g:neoterm_fixedsize = 1
-
-" TaskWarrior
-let g:task_rc_override = 'rc.defaultwidth=0'
 
 "" Show/hide terminal
 nnoremap <silent> <leader>to :call neoterm#open()<cr>
