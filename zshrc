@@ -63,8 +63,6 @@ export DISABLE_AUTO_TITLE=true
 
 export PATH="/Applications/android-sdk/tools:/Applications/android-sdk/platform-tools:$PATH"
 
-export THEME_FILE="$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
-
 envfile="$HOME/.zshrc-osx.sh"
 if [ -r $envfile ]; then
     . $envfile
@@ -81,8 +79,6 @@ export FZF_ALT_C_COMMAND="command find -L . \( -path '*/\.*' -o -fstype 'dev' -o
 bindkey '^G' fzf-cd-widget
 
 source ~/.iterm2_shell_integration.zsh
-
-source "$THEME_FILE"
 
 function tn() {
   if [ -z "$1" ]; then;
