@@ -93,7 +93,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'killphi/vim-legend'
 
 " Theme
-Plug 'morhetz/gruvbox'
+Plug 'ajmwagar/vim-deus'
 
 " Statusbar
 Plug 'itchyny/lightline.vim'
@@ -421,4 +421,4 @@ set mouse=a
 "" Solarized theme
 set background=dark
 " set termguicolors
-colorscheme gruvbox
+colorscheme deus
