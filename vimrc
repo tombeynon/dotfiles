@@ -405,6 +405,11 @@ augroup END
 " autocmd FocusGained * silent! checktime
 autocmd WinEnter,BufWinEnter,FocusGained * checktime
 
+" Hide status bar while using fzf commands
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg
