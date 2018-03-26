@@ -76,6 +76,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'lambdalisue/vim-gista'
 
 " Languages
