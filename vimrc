@@ -389,6 +389,10 @@ endfunction
 
 "" ALE linting
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_fixers = {
+\  'ruby': ['rubocop'],
+\}
+nmap <leader>f <Plug>(ale_fix)
 
 augroup ALELightlineUpdate
     autocmd!
