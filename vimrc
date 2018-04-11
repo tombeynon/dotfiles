@@ -280,8 +280,7 @@ command! -bang -nargs=? -complete=dir Files
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
 command! MRUFiles call fzf#run(fzf#wrap({
-      \   'source': 'sed "1d;s|^'.getcwd().'/||" ./.vim/neomru/file',
-      \   'sink': 'e'
+      \   'source': 'sed "1d;s|^'.getcwd().'/||" ./.vim/neomru/file'
       \ }))
 
 " Neoterm
