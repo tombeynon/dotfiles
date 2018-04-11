@@ -42,7 +42,7 @@ Plug 'xolox/vim-session'
 Plug 'junegunn/vim-slash'
 
 " CTags
-Plug 'szw/vim-tags'
+Plug 'ludovicchabant/vim-gutentags'
 
 " File explorer
 Plug 'Shougo/unite.vim'
@@ -252,8 +252,7 @@ let g:ragtag_global_maps = 1
 let NERDTreeQuitOnOpen = 1
 
 "" Tags
-let g:vim_tags_directories = [".vim"]
-let g:vim_tags_extension = '.tags'
+let g:gutentags_cache_dir = '.vim'
 
 "" TagBar
 let g:tagbar_autoclose = 1
