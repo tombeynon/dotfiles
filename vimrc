@@ -217,10 +217,10 @@ let cwname = fnamemodify(getcwd(), ':p:h:t')
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 100
 set completeopt=longest,menuone,preview
-call deoplete#custom#set('_', 'min_pattern_length', 1)
-call deoplete#custom#set('ultisnips', 'rank', 9999)
-call deoplete#custom#set('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
-call deoplete#custom#set('_', 'converters',
+call deoplete#custom#source('_', 'min_pattern_length', 1)
+call deoplete#custom#source('ultisnips', 'rank', 9999)
+call deoplete#custom#source('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
+call deoplete#custom#source('_', 'converters',
       \ ['converter_auto_delimiter', 'converter_remove_overlap',
       \ 'converter_auto_paren'])
 
