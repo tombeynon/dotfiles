@@ -286,7 +286,7 @@ command! MRUFiles call fzf#run(fzf#wrap({
 " Neoterm
 " let g:neoterm_size = 15
 " let g:neoterm_fixedsize = 1
-let g:neoterm_default_mod = 'botright split'
+let g:neoterm_default_mod = 'botright'
 let g:neoterm_autoscroll = 1
 
 "" Show/hide terminal
