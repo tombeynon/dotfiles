@@ -285,12 +285,14 @@ command! MRUFiles call fzf#run(fzf#wrap({
       \ }))
 
 " Neoterm
-let g:neoterm_size = 15
-let g:neoterm_fixedsize = 1
+" let g:neoterm_size = 15
+" let g:neoterm_fixedsize = 1
+let g:neoterm_default_mod = 'botright split'
+let g:neoterm_autoscroll = 1
 
 "" Show/hide terminal
-nnoremap <silent> <leader>to :call neoterm#open()<cr>
-nnoremap <silent> <leader>th :call neoterm#close()<cr>
+nnoremap <silent> <leader>to :execute 'Topen'<cr>
+nnoremap <silent> <leader>th :execute 'Tclose'<cr>
 
 " Tests
 let test#strategy = "neoterm"
@@ -301,15 +303,14 @@ nmap <silent> <leader>rl :call RunTest('TestLast')<CR>
 nmap <silent> <leader>rv :call RunTest('TestVisit')<CR>
 
 function! RunTest(cmd)
-   call neoterm#open() " Opens the neoterm window
-   call neoterm#normal('G') " Scroll to the end of the neoterm window
-   exec a:cmd
+  execute ':Topen'
+  " call neoterm#normal('G') " Scroll to the end of the neoterm window
+  exec a:cmd
 endfunction
 
 " Gitup
 function! OpenGitup()
-  execute ':T gitup'
-  execute 'call neoterm#close()'
+  execute ':silent exec "!gitup"'
 endfunction
 command! Gitup :call OpenGitup()
 
