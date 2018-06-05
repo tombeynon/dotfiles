@@ -48,7 +48,7 @@ KEYTIMEOUT=1
 
 # User configuration
 
-export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin"
 export TERM=screen-256color
 
 # ssh
