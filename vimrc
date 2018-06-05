@@ -83,6 +83,7 @@ Plug 'lambdalisue/vim-gista'
 Plug 'sheerun/vim-polyglot'
 Plug 'AndrewRadev/vim-eco'
 Plug 'sjl/strftimedammit.vim'
+Plug 'b4b4r07/vim-ansible-vault'
 
 " Ruby, Rails and Bundler
 Plug 'vim-ruby/vim-ruby'
@@ -397,6 +398,9 @@ augroup ALELightlineUpdate
     autocmd!
     autocmd User ALELint call lightline#update()
 augroup END
+
+"" Ansible vault
+let g:ansible_vault_password_file = '.lollipop'
 
 "" highlight current window
 augroup BgHighlight
