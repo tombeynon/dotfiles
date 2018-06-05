@@ -99,6 +99,7 @@ Plug 'ajmwagar/vim-deus'
 
 " Statusbar
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'edkolev/tmuxline.vim'
 
 " Buffers, windows and tabs
@@ -316,11 +317,12 @@ command! Gitup :call OpenGitup()
 "" Statusline
 set laststatus=2
 let g:tmuxline_theme = 'lightline'
+
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'ale' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ ['filename'] ],
@@ -337,14 +339,25 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \ },
       \ 'component_expand': {
-      \   'ale': 'ALEGetStatusLine',
+      \   'linter_checking': 'lightline#ale#checking',
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
+      \   'linter_ok': 'lightline#ale#ok',
       \ },
       \ 'component_type': {
-      \   'ale': 'error',
+      \   'linter_checking': 'left',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \   'linter_ok': 'left',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
