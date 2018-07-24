@@ -13,6 +13,7 @@ antigen bundle bundler
 antigen bundle osx
 antigen bundle tmux
 antigen bundle tmuxinator
+antigen bundle terraform
 antigen bundle command-not-found
 
 # Syntax highlighting bundle.
