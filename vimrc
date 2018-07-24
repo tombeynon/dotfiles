@@ -61,9 +61,8 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'w0rp/ale'
 Plug 'fishbullet/deoplete-ruby'
-Plug 'SirVer/ultisnips'
-" Plug 'tombeynon/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'vim-scripts/marvim'
 
@@ -220,11 +219,11 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 100
 set completeopt=longest,menuone,preview
 call deoplete#custom#source('_', 'min_pattern_length', 1)
-call deoplete#custom#source('ultisnips', 'rank', 9999)
-call deoplete#custom#source('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
-call deoplete#custom#source('_', 'converters',
-      \ ['converter_auto_delimiter', 'converter_remove_overlap',
-      \ 'converter_auto_paren'])
+" call deoplete#custom#source('ultisnips', 'rank', 9999)
+" call deoplete#custom#source('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
+" call deoplete#custom#source('_', 'converters',
+"       \ ['converter_auto_delimiter', 'converter_remove_overlap',
+"       \ 'converter_auto_paren'])
 
 function! g:Multiple_cursors_before()
   let g:deoplete#disable_auto_complete = 1
@@ -233,7 +232,7 @@ function! g:Multiple_cursors_after()
   let g:deoplete#disable_auto_complete = 0
 endfunction
 
-let g:UltiSnipsExpandTrigger="<C-j>"
+" let g:UltiSnipsExpandTrigger="<C-j>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "" Neoformat
