@@ -34,6 +34,13 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sbdchd/neoformat'
 Plug 'ntpeters/vim-better-whitespace'
 
+" LanguageClient
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+
+
 " IDE
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -214,11 +221,17 @@ vmap <Leader>P "+P
 " CWD name
 let cwname = fnamemodify(getcwd(), ':p:h:t')
 
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+      \ 'ruby': ['solargraph','stdio']
+      \ }
+
 "" Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 100
-set completeopt=longest,menuone,preview
-call deoplete#custom#source('_', 'min_pattern_length', 1)
+" let g:deoplete#auto_complete_delay = 100
+" set completeopt=longest,menuone,preview
+" call deoplete#custom#source('_', 'min_pattern_length', 1)
+
 " call deoplete#custom#source('ultisnips', 'rank', 9999)
 " call deoplete#custom#source('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
 " call deoplete#custom#source('_', 'converters',
