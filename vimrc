@@ -40,7 +40,6 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'do': 'bash install.sh',
       \ }
 
-
 " IDE
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -65,9 +64,12 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+
 Plug 'w0rp/ale'
-Plug 'fishbullet/deoplete-ruby'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
@@ -226,27 +228,22 @@ let g:LanguageClient_serverCommands = {
       \ 'ruby': ['solargraph','stdio']
       \ }
 
-"" Deoplete
-let g:deoplete#enable_at_startup = 1
-" let g:deoplete#auto_complete_delay = 100
-" set completeopt=longest,menuone,preview
-" call deoplete#custom#source('_', 'min_pattern_length', 1)
+"" Completion
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+" suppress the annoying 'match x of y' messages
+set shortmess+=c
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+let g:ncm2#complete_length = [[1,3],[7,2]]
 
-" call deoplete#custom#source('ultisnips', 'rank', 9999)
-" call deoplete#custom#source('_', 'matchers', ['matcher_head', 'matcher_fuzzy'])
-" call deoplete#custom#source('_', 'converters',
-"       \ ['converter_auto_delimiter', 'converter_remove_overlap',
-"       \ 'converter_auto_paren'])
-
+" Disable NCM2 on multiple cursors
 function! g:Multiple_cursors_before()
-  let g:deoplete#disable_auto_complete = 1
+  call ncm2#disable_for_buffer()
 endfunction
 function! g:Multiple_cursors_after()
-  let g:deoplete#disable_auto_complete = 0
+  call ncm2#enable_for_buffer()
 endfunction
-
-" let g:UltiSnipsExpandTrigger="<C-j>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "" Neoformat
 let g:neoformat_enabled_eruby = ['html-beutify']
