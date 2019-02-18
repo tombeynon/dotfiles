@@ -34,12 +34,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sbdchd/neoformat'
 Plug 'ntpeters/vim-better-whitespace'
 
-" LanguageClient
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-
 " IDE
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -64,10 +58,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'w0rp/ale'
 " Plug 'SirVer/ultisnips'
@@ -223,26 +214,26 @@ vmap <Leader>P "+P
 " CWD name
 let cwname = fnamemodify(getcwd(), ':p:h:t')
 
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-      \ 'ruby': ['solargraph','stdio']
-      \ }
-
 "" Completion
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-" suppress the annoying 'match x of y' messages
-set shortmess+=c
-" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
-let g:ncm2#complete_length = [[1,3],[7,2]]
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Disable NCM2 on multiple cursors
-function! g:Multiple_cursors_before()
-  call ncm2#disable_for_buffer()
-endfunction
-function! g:Multiple_cursors_after()
-  call ncm2#enable_for_buffer()
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 "" Neoformat
