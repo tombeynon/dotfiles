@@ -70,7 +70,7 @@ Plug 'vim-scripts/marvim'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 
-" Unified navigation in tmux and vim
+" Tmux integration
 Plug 'christoomey/vim-tmux-navigator'
 
 " Git
@@ -159,6 +159,7 @@ let g:session_directory = "./.vim/"
 let g:session_default_name = "session"
 let g:session_autoload = "yes"
 let g:session_autosave = "yes"
+let g:session_lock_enabled = 0
 
 
 "" Searching
@@ -323,7 +324,8 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ ['filename'] ],
@@ -402,7 +404,6 @@ function! LightlineMode()
 endfunction
 
 "" ALE linting
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \}
