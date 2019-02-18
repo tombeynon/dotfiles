@@ -120,6 +120,7 @@ Plug 'ryanoasis/vim-devicons'
 " Dispatch
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'neomake/neomake'
 
 
 call plug#end()
@@ -289,18 +290,24 @@ nnoremap <silent> <leader>to :execute 'Topen'<cr>
 nnoremap <silent> <leader>th :execute 'Tclose'<cr>
 
 " Tests
-let test#strategy = "neoterm"
-nmap <silent> <leader>rt :call RunTest('TestNearest')<CR>
-nmap <silent> <leader>rs :call RunTest('TestFile')<CR>
-nmap <silent> <leader>ra :call RunTest('TestSuite')<CR>
-nmap <silent> <leader>rl :call RunTest('TestLast')<CR>
-nmap <silent> <leader>rv :call RunTest('TestVisit')<CR>
+let test#strategy = "neomake"
+let g:neomake_open_list = 2
+nmap <silent> <leader>rt :execute 'TestNearest'<CR>
+nmap <silent> <leader>rs :execute 'TestFile'<CR>
+nmap <silent> <leader>ra :execute 'TestSuite'<CR>
+nmap <silent> <leader>rl :execute 'TestLast'<CR>
+nmap <silent> <leader>rv :execute 'TestVisit'<CR>
+" nmap <silent> <leader>rt :call RunTest('TestNearest')<CR>
+" nmap <silent> <leader>rs :call RunTest('TestFile')<CR>
+" nmap <silent> <leader>ra :call RunTest('TestSuite')<CR>
+" nmap <silent> <leader>rl :call RunTest('TestLast')<CR>
+" nmap <silent> <leader>rv :call RunTest('TestVisit')<CR>
 
-function! RunTest(cmd)
-  execute ':Topen'
-  " call neoterm#normal('G') " Scroll to the end of the neoterm window
-  exec a:cmd
-endfunction
+" function! RunTest(cmd)
+"   execute ':Topen'
+"   " call neoterm#normal('G') " Scroll to the end of the neoterm window
+"   exec a:cmd
+" endfunction
 
 " Gitup
 function! OpenGitup()
