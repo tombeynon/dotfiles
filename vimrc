@@ -122,7 +122,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'neomake/neomake'
 
-
 call plug#end()
 
 if !has('nvim')
@@ -292,23 +291,32 @@ nnoremap <silent> <leader>th :execute 'Tclose'<cr>
 
 " Tests
 let test#strategy = "neomake"
-let g:neomake_open_list = 2
+" let g:neomake_open_list = 2
+
+nmap <silent> <leader>ro :execute 'copen'<cr>
+nmap <silent> <leader>rh :execute 'cclose'<cr>
+nmap <silent> <leader>rc :call CloseAndClearQF()<cr>
+
+function! CloseAndClearQF()
+  call setqflist([])
+  execute ':cclose'
+endfunction
+
 nmap <silent> <leader>rt :execute 'TestNearest'<CR>
 nmap <silent> <leader>rs :execute 'TestFile'<CR>
 nmap <silent> <leader>ra :execute 'TestSuite'<CR>
 nmap <silent> <leader>rl :execute 'TestLast'<CR>
 nmap <silent> <leader>rv :execute 'TestVisit'<CR>
-" nmap <silent> <leader>rt :call RunTest('TestNearest')<CR>
-" nmap <silent> <leader>rs :call RunTest('TestFile')<CR>
-" nmap <silent> <leader>ra :call RunTest('TestSuite')<CR>
-" nmap <silent> <leader>rl :call RunTest('TestLast')<CR>
-" nmap <silent> <leader>rv :call RunTest('TestVisit')<CR>
 
-" function! RunTest(cmd)
-"   execute ':Topen'
-"   " call neoterm#normal('G') " Scroll to the end of the neoterm window
-"   exec a:cmd
-" endfunction
+nmap <silent> <leader>tt :call RunTest('TestNearest -strategy=neoterm')<CR>
+nmap <silent> <leader>ts :call RunTest('TestFile -strategy=neoterm')<CR>
+nmap <silent> <leader>ta :call RunTest('TestSuite -strategy=neoterm')<CR>
+
+function! RunTest(cmd)
+  execute ':Topen'
+  " call neoterm#normal('G') " Scroll to the end of the neoterm window
+  exec a:cmd
+endfunction
 
 " Gitup
 function! OpenGitup()
@@ -443,6 +451,11 @@ function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+augroup ALELightlineUpdate
+    autocmd!
+    autocmd User ALELint call lightline#update()
+augroup END
+
 augroup NeomakeLightlineUpdate
     autocmd!
     autocmd User NeomakeJobStarted,NeomakeFinished nested call lightline#update()
@@ -453,11 +466,6 @@ let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \}
 nmap <leader>f <Plug>(ale_fix)
-
-augroup ALELightlineUpdate
-    autocmd!
-    autocmd User ALELint call lightline#update()
-augroup END
 
 "" Ansible vault
 let g:ansible_vault_password_file = '.lollipop'
