@@ -325,6 +325,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
       \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'make_checking', 'make_errors', 'make_warnings', 'make_ok' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'inactive': {
@@ -346,12 +347,20 @@ let g:lightline = {
       \   'linter_warnings': 'lightline#ale#warnings',
       \   'linter_errors': 'lightline#ale#errors',
       \   'linter_ok': 'lightline#ale#ok',
+      \   'make_checking': 'NeomakeChecking',
+      \   'make_warnings': 'NeomakeWarnings',
+      \   'make_errors': 'NeomakeErrors',
+      \   'make_ok': 'NeomakeOk',
       \ },
       \ 'component_type': {
       \   'linter_checking': 'left',
       \   'linter_warnings': 'warning',
       \   'linter_errors': 'error',
       \   'linter_ok': 'left',
+      \   'make_checking': 'left',
+      \   'make_warnings': 'warning',
+      \   'make_errors': 'error',
+      \   'make_ok': 'left',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
@@ -361,6 +370,37 @@ let g:lightline#ale#indicator_checking = "\uf110"
 let g:lightline#ale#indicator_warnings = "\uf071"
 let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
+
+function! s:get_neomake_counts()
+  let l:counts = neomake#statusline#LoclistCounts()
+
+  if empty(l:counts)
+    return neomake#statusline#QflistCounts()
+  else
+    return l:counts
+  endif
+endfunction
+
+function! NeomakeWarnings()
+  let counts = s:get_neomake_counts()
+  let warnings = get(counts, 'W', 0)
+  return warnings ? "⚠".warnings : ''
+endfunction
+
+function! NeomakeErrors()
+  let counts = s:get_neomake_counts()
+  let errors = get(counts, 'E', 0)
+  return errors ? "✖".errors : ''
+endfunction
+
+function! NeomakeChecking()
+  let running = neomake#GetJobs()
+  return empty(running) ? '' : ""
+endfunction
+
+function! NeomakeOk()
+  return ''
+endfunction
 
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -402,6 +442,11 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+augroup NeomakeLightlineUpdate
+    autocmd!
+    autocmd User NeomakeJobStarted,NeomakeFinished nested call lightline#update()
+augroup END
 
 "" ALE linting
 let g:ale_fixers = {
