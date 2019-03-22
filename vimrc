@@ -58,7 +58,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 Plug 'w0rp/ale'
 " Plug 'SirVer/ultisnips'
@@ -365,7 +365,7 @@ let g:lightline = {
       \   'linter_warnings': 'warning',
       \   'linter_errors': 'error',
       \   'linter_ok': 'left',
-      \   'make_checking': 'left',
+      \   'make_checking': 'warning',
       \   'make_warnings': 'warning',
       \   'make_errors': 'error',
       \   'make_ok': 'left',
@@ -407,7 +407,10 @@ function! NeomakeChecking()
 endfunction
 
 function! NeomakeOk()
-  return ''
+  let checking = NeomakeChecking()
+  let warnings = NeomakeWarnings()
+  let errors = NeomakeErrors()
+  return errors == '' && warnings == '' && checking == '' ? '' : ''
 endfunction
 
 function! LightlineModified()
