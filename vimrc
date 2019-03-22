@@ -155,9 +155,9 @@ set undodir=~/.vim/undodir
 set sessionoptions+=tabpages,globals " taboo
 set sessionoptions-=blank
 let g:session_directory = "./.vim/"
-let g:session_default_name = "session"
-let g:session_autoload = "yes"
-let g:session_autosave = "yes"
+" let g:session_default_name = "session"
+" let g:session_autoload = "yes"
+" let g:session_autosave = "yes"
 let g:session_lock_enabled = 0
 
 
@@ -186,11 +186,14 @@ map <silent> <C-t> :TagbarToggle<CR>
 "" Helpers
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :VimFilerExplorer -find<CR>
-nnoremap <Leader>t :TW<CR>
+nnoremap <Leader>tc :tabclose<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-autocmd BufEnter * EnableStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
+let g:strip_whitelines_at_eof=1
 
 "" File explorer
 let g:vimfiler_as_default_explorer = 1
@@ -482,7 +485,7 @@ augroup END
 
 "" reload changed file
 " autocmd FocusGained * silent! checktime
-autocmd WinEnter,BufWinEnter,FocusGained * checktime
+" autocmd WinEnter,BufWinEnter,FocusGained * checktime
 
 " Hide status bar while using fzf commands
 autocmd! FileType fzf
