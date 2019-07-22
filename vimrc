@@ -296,6 +296,23 @@ nnoremap <silent> <leader>th :execute 'Tclose'<cr>
 let test#strategy = "neomake"
 " let g:neomake_open_list = 2
 
+if filereadable(expand("docker-compose.yml"))
+  let g:docker = 1
+else
+  let g:docker = 0
+endif
+
+function! DockerTransform(cmd) abort
+  return 'docker-compose run app '.a:cmd
+endfunction
+
+let g:test#custom_transformations = {'docker': function('DockerTransform')}
+
+if g:docker
+  let g:test#transformation = 'docker'
+  let g:ale_command_wrapper = 'docker-compose run app'
+end
+
 nmap <silent> <leader>ro :execute 'copen'<cr>
 nmap <silent> <leader>rh :execute 'cclose'<cr>
 nmap <silent> <leader>rc :call CloseAndClearQF()<cr>
