@@ -94,7 +94,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'killphi/vim-legend'
 
 " Theme
-Plug 'ajmwagar/vim-deus'
+Plug 'joshdick/onedark.vim'
 
 " Statusbar
 Plug 'itchyny/lightline.vim'
@@ -332,7 +332,7 @@ set laststatus=2
 let g:tmuxline_theme = 'lightline'
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
       \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
@@ -508,4 +508,4 @@ set mouse=a
 "" Solarized theme
 set background=dark
 " set termguicolors
-colorscheme deus
+colorscheme onedark
