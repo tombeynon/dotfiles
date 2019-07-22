@@ -10,3 +10,5 @@
 	hide-status = 1
 [github]
 	user = tombeynon
+[credential]
+	helper = osxkeychain

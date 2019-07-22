@@ -468,6 +468,8 @@ augroup NeomakeLightlineUpdate
 augroup END
 
 "" ALE linting
+let g:ale_linters = {'javascript': ['eslint']}
+
 let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \}
@@ -485,7 +487,7 @@ augroup END
 
 "" reload changed file
 " autocmd FocusGained * silent! checktime
-" autocmd WinEnter,BufWinEnter,FocusGained * checktime
+ autocmd WinEnter,BufWinEnter,FocusGained * silent! checktime
 
 " Hide status bar while using fzf commands
 autocmd! FileType fzf

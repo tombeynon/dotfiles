@@ -98,3 +98,10 @@ function tn() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# pip3
+export PATH="/Users/tombeynon/Library/Python/3.7/bin:$PATH"
