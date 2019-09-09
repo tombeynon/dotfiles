@@ -58,7 +58,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'majutsushi/tagbar'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'w0rp/ale'
 " Plug 'SirVer/ultisnips'
@@ -296,23 +296,6 @@ nnoremap <silent> <leader>th :execute 'Tclose'<cr>
 let test#strategy = "neomake"
 " let g:neomake_open_list = 2
 
-if filereadable(expand("docker-compose.yml"))
-  let g:docker = 1
-else
-  let g:docker = 0
-endif
-
-function! DockerTransform(cmd) abort
-  return 'docker-compose run app '.a:cmd
-endfunction
-
-let g:test#custom_transformations = {'docker': function('DockerTransform')}
-
-if g:docker
-  let g:test#transformation = 'docker'
-  let g:ale_command_wrapper = 'docker-compose run app'
-end
-
 nmap <silent> <leader>ro :execute 'copen'<cr>
 nmap <silent> <leader>rh :execute 'cclose'<cr>
 nmap <silent> <leader>rc :call CloseAndClearQF()<cr>
@@ -337,6 +320,24 @@ function! RunTest(cmd)
   " call neoterm#normal('G') " Scroll to the end of the neoterm window
   exec a:cmd
 endfunction
+
+" Docker config if required
+if filereadable(expand("docker-compose.yml"))
+  let g:docker = 1
+else
+  let g:docker = 0
+endif
+
+function! DockerTransform(cmd) abort
+  return 'docker-compose run app '.a:cmd
+endfunction
+
+let g:test#custom_transformations = {'docker': function('DockerTransform')}
+
+if g:docker
+  let g:test#transformation = 'docker'
+  " let g:ale_command_wrapper = 'docker-compose run app'
+end
 
 " Gitup
 function! OpenGitup()
