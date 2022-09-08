@@ -13,3 +13,4 @@ brew 'neovim'
 
 brew 'node'
 brew 'mysql'
+brew 'nvm'

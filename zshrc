@@ -8,19 +8,19 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-# antigen bundle brew
-antigen bundle bundler
-antigen bundle osx
+## antigen bundle brew
+# antigen bundle bundler
+# antigen bundle osx
 antigen bundle tmux
-antigen bundle tmuxinator
-antigen bundle terraform
-antigen bundle command-not-found
+# antigen bundle tmuxinator
+# antigen bundle terraform
+# antigen bundle command-not-found
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # fzf
-antigen bundle urbainvaes/fzf-marks
+# antigen bundle urbainvaes/fzf-marks
 
 # Load the theme.
 antigen theme norm
@@ -92,12 +92,13 @@ function tn() {
 
 
 # added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+# [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
 export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
 
 # Fastlane
@@ -105,3 +106,7 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 
 # pip3
 export PATH="/Users/tombeynon/Library/Python/3.7/bin:$PATH"
+export PATH="/Users/tombeynon/Library/Python/3.8/bin:$PATH"
+
+export GOPATH=$HOME/go
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
