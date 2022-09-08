@@ -20,7 +20,6 @@ Plug 'terryma/vim-expand-region'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'wellle/targets.vim'
 
 " Code helpers
@@ -39,7 +38,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 " Search
-Plug 'junegunn/vim-slash'
+" Plug 'junegunn/vim-slash'
 
 " CTags
 Plug 'ludovicchabant/vim-gutentags'
@@ -53,9 +52,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-
-" Tagbar
-Plug 'majutsushi/tagbar'
+Plug 'yuki-ycino/fzf-preview.vim'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -102,8 +99,6 @@ Plug 'maximbaz/lightline-ale'
 Plug 'edkolev/tmuxline.vim'
 
 " Buffers, windows and tabs
-Plug 'vim-scripts/bufkill.vim'
-Plug 'dr-chip-vim-scripts/ZoomWin'
 Plug 'schickling/vim-bufonly'
 Plug 'gcmt/taboo.vim'
 Plug 't9md/vim-choosewin'
@@ -166,6 +161,7 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+nnoremap <esc> :noh<return><esc>
 
 "" Escape key delay
 set nottimeout ttimeout ttimeoutlen=0
@@ -181,9 +177,13 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 map <silent> <C-e> :VimFilerExplorer -toggle -parent -force-hide<CR>
 map <silent> <C-p> :Files<CR>
 map <silent> <C-b> :FZFMru<CR>
-map <silent> <C-t> :TagbarToggle<CR>
+map <silent> <C-t> :BTags<CR>
 
 "" Helpers
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
+
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :VimFilerExplorer -find<CR>
 nnoremap <Leader>tc :tabclose<CR>
@@ -229,6 +229,18 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Multiple cursors
+" xmap <silent> <C-x> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+" nmap <expr> <silent> <C-x> <SID>select_current_word()
+
+function! s:select_current_word()
+  return "\<Plug>(coc-cursors-word)*:nohlsearch\<CR>"
+endfunc
+
+function! s:select_current_range()
+  return "y/\V<C-r>=escape(@\",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn"
+endfunc
+
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -260,11 +272,6 @@ let NERDTreeQuitOnOpen = 1
 "" Tags
 let g:gutentags_cache_dir = '.vim'
 
-"" TagBar
-let g:tagbar_autoclose = 1
-let g:tagbar_map_nexttag = ']t'
-let g:tagbar_map_prevtag = '[t'
-
 "" Legend
 let g:legend_file_path = ".vim/coverage.vim"
 let g:legend_miss_sign    = "⊙"
@@ -285,7 +292,7 @@ command! -bang -nargs=? -complete=dir Files
 " Neoterm
 " let g:neoterm_size = 15
 " let g:neoterm_fixedsize = 1
-let g:neoterm_default_mod = 'botright'
+let g:neoterm_default_mod = 'vertical botright'
 let g:neoterm_autoscroll = 1
 
 "" Show/hide terminal
@@ -311,14 +318,15 @@ nmap <silent> <leader>ra :execute 'TestSuite'<CR>
 nmap <silent> <leader>rl :execute 'TestLast'<CR>
 nmap <silent> <leader>rv :execute 'TestVisit'<CR>
 
-nmap <silent> <leader>tt :call RunTest('TestNearest -strategy=neoterm')<CR>
-nmap <silent> <leader>ts :call RunTest('TestFile -strategy=neoterm')<CR>
-nmap <silent> <leader>ta :call RunTest('TestSuite -strategy=neoterm')<CR>
+nmap <silent> <leader>tt :execute RunTest('TestNearest -strategy=neoterm')<CR>
+nmap <silent> <leader>ts :execute RunTest('TestFile -strategy=neoterm')<CR>
+nmap <silent> <leader>ta :execute RunTest('TestSuite -strategy=neoterm')<CR>
+nmap <silent> <leader>tl :execute RunTest('TestLast -strategy=neoterm')<CR>
 
 function! RunTest(cmd)
   execute ':Topen'
   " call neoterm#normal('G') " Scroll to the end of the neoterm window
-  exec a:cmd
+  execute a:cmd
 endfunction
 
 " Docker config if required
@@ -506,11 +514,6 @@ augroup END
 "" reload changed file
 " autocmd FocusGained * silent! checktime
  autocmd WinEnter,BufWinEnter,FocusGained * silent! checktime
-
-" Hide status bar while using fzf commands
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "" vp doesn't replace paste buffer
 function! RestoreRegister()
