@@ -3,6 +3,8 @@ export DEFAULT_USER='tombeynon'
 
 source ~/.antigen/antigen.zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -49,7 +51,7 @@ KEYTIMEOUT=1
 
 # User configuration
 
-export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin"
+export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$PATH"
 export TERM=screen-256color
 
 # ssh
@@ -110,3 +112,4 @@ export PATH="/Users/tombeynon/Library/Python/3.8/bin:$PATH"
 
 export GOPATH=$HOME/go
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
